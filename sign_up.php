@@ -52,6 +52,12 @@ if (isset($_POST["submit"])) {
     }
 
 
+    if(!valid_email($email)){
+        $email_error = "You must enter valid email address.";
+        $errors++;
+    }
+
+
     if($errors === 0) {
 
 
@@ -150,6 +156,7 @@ require_once 'layouts/left-sidebar.php';
             <?=  $warning . "<br>" ?>
             <?= $message . "<br>"?>
             <?= $not_equal ."<br>"?>
+            <?= $email_error."<br>"?>
         </div>
     </div>
 </div>

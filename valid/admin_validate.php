@@ -31,7 +31,7 @@ function is_text($data){
 
 
 function is_equal($first_data, $second_data){
-    if ($first_data == $second_data)return true;
+    if ($first_data === $second_data)return true;
     return false;
 }
 
