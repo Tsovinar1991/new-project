@@ -1,7 +1,6 @@
 <?php
 
 //print_r($_POST);
-session_start();
 
 
 require_once 'valid/admin_validate.php';
@@ -13,6 +12,8 @@ $conf_password = $_POST['conf_password'];
 $registr_date = date('Y-m-d');
 $warning = "";
 $message = "";
+$not_equal ="";
+$email_error = "";
 $errors = 0;
 
 
@@ -54,6 +55,7 @@ if (isset($_POST["submit"])) {
             require_once "components/db_functions.php";
             echo "Connected successfully" . "<br>";
 
+
             $sql = "Insert into  registr_s(f_name, l_name, email, password, registr_date) values('$f_name', '$l_name', '$email', '$password', '$registr_date' )";
             // $sql = "Insert into  registr_s(f_name, l_name, email, password, registr_date) values('nkfjkw', 'jwndkw', 'nkfnwkf', 'whfiiw', $registr_date)";
             if ($conn->exec($sql)) {
@@ -68,6 +70,7 @@ if (isset($_POST["submit"])) {
             echo "Connection failed: " . $e->getMessage();
         }
     }
+    
 }
 
 ?>

@@ -6,13 +6,34 @@ require_once 'layouts/header.php';
 ?>
 
 
+
+<?php
+
+
+require_once 'valid/admin_validate.php';
+
+$sign_email = $_POST['sign_email'];
+$sign_password = ($_POST['sign_password']);
+$query = $conn->query("Select * from registr_s where email = '$sign_email' and password ='$sign_password' ");
+$count = $query->rowcount();
+$row = $query->fetch();
+
+if ($count > 0)
+{
+    session_start();
+    $_SESSION['id'] = $row['id'];
+    header('location:welcome.php');
+}
+
+
+?>
 <?php
 require_once 'layouts/left-sidebar.php';
 ?>
 <div class="col-md-8 right">
 
     <div class="container">
-        <form method="post" action="valid/valid_login.php">
+        <form method="post" action="log_in.php">
             <!-- Form Name -->
             <h2 class="m_top">Log In</h2>
 

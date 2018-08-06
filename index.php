@@ -47,6 +47,8 @@ $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
 </div>
 
 
+
+
 <?php require_once 'layouts/footer.php'; ?>
 
 
