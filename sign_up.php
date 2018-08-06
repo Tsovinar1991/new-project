@@ -17,29 +17,42 @@ $conf_password =$_POST['conf_password'];
 $registr_date = date('Y-m-d');
 $warning = "";
 $message = "";
+$errors = 0;
+
+
+
+
+
+
 
 
 
 if (isset($_POST["submit"])) {
+    if (!required($f_name) || !required($l_name) || !required($email) || !required($password) || !required($conf_password)) {
+        $warning = "Please fill all required fields.";
+        $errors++;
+
+    }
 
     if(!is_text($f_name) || !is_text($l_name)){
         $message  = "First Name and Last Name must contain only letters.";
+        $errors++;
     }
 
 
-    else if (!required($f_name) || !required($l_name) || !required($email) || !required($password) || !required($conf_password)) {
+    if (!required($f_name) || !required($l_name) || !required($email) || !required($password) || !required($conf_password)) {
         $warning = "Please fill all required fields.";
+        $errors++;
 
     }
 
-    else if(!is_equal($password,$conf_password)){
+    if(!is_equal($password,$conf_password)){
         $not_equal = "Password and Confirm password must be equal.";
+        $errors++;
     }
 
 
-
-
-    else {
+    if($errors === 0) {
 
 
 
@@ -137,8 +150,6 @@ require_once 'layouts/left-sidebar.php';
             <?=  $warning . "<br>" ?>
             <?= $message . "<br>"?>
             <?= $not_equal ."<br>"?>
-            <?=$email_warning."<br>"?>
-
         </div>
     </div>
 </div>
