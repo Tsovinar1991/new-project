@@ -17,6 +17,9 @@ ul {
     margin-left: 70px;
     padding: 0;
 }
+li{
+    list-style-type: none;
+}
 
 .nav {
     float: left;
@@ -44,8 +47,19 @@ ul {
 
 
 
-a{
+.category_nav li a{
     color:black;
+    text-decoration:none;
+    font-size: 20px;
+
+
+}
+
+.category_nav li a:hover{
+    color:red;
+    text-decoration:none;
+
+
 }
 
 
@@ -119,9 +133,13 @@ a{
     color:#13B5BF;
 }
 
+
+
+
  .admin:hover{
+
      text-decoration:none;
-     color:#5C2D4E;
+     color:red;
  }
 
 
