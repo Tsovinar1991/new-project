@@ -56,7 +56,7 @@ if (isset($_POST["submit"])) {
             echo "Connected successfully" . "<br>";
 
 
-            $sql = "Insert into  registr_s(f_name, l_name, email, password, registr_date) values('$f_name', '$l_name', '$email', '$password', '$registr_date' )";
+            $sql = "Insert into  registr_s(f_name, l_name, email, password, registr_date) values('$f_name', '$l_name', '$email', md5('$password'), '$registr_date' )";
             // $sql = "Insert into  registr_s(f_name, l_name, email, password, registr_date) values('nkfjkw', 'jwndkw', 'nkfnwkf', 'whfiiw', $registr_date)";
             if ($conn->exec($sql)) {
                 echo "New record created successfully";
