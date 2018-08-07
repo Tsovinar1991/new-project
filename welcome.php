@@ -2,6 +2,8 @@
 
 <?php
 require_once 'layouts/header.php';
+require_once 'cookies_sessions/session_on.php';
+var_dump(check_session());
 ?>
 
 

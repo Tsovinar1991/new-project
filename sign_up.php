@@ -2,7 +2,7 @@
 
 //print_r($_POST);
 
-
+require_once "components/db_functions.php";
 require_once 'valid/admin_validate.php';
 $f_name = $_POST['name'];
 $l_name = $_POST['l_name'];
@@ -30,12 +30,6 @@ if (isset($_POST["submit"])) {
     }
 
 
-    if (!required($f_name) || !required($l_name) || !required($email) || !required($password) || !required($conf_password)) {
-        $warning = "Please fill all required fields.";
-        $errors++;
-
-    }
-
     if (!is_equal($password, $conf_password)) {
         $not_equal = "Password and Confirm password must be equal.";
         $errors++;
@@ -52,7 +46,6 @@ if (isset($_POST["submit"])) {
 
 
         try {
-            require_once "components/db_functions.php";
             echo "Connected successfully" . "<br>";
 
 
@@ -161,3 +154,4 @@ require_once 'layouts/left-sidebar.php';
 
 
 
+/// sha1 modifing

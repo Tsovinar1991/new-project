@@ -3,6 +3,8 @@
 require_once 'components/db_functions.php';
 
 require_once 'layouts/header.php';
+require_once 'cookies_sessions/session_on.php';
+
 ?>
 
 
@@ -14,6 +16,7 @@ require_once 'valid/admin_validate.php';
 
 $sign_email = $_POST['sign_email'];
 $sign_password = md5(($_POST['sign_password']));
+$remember_me = $_POST['checkbox'];
 $query = $conn->query("Select * from registr_s where email = '$sign_email' and password ='$sign_password' ");
 $count = $query->rowcount();
 $row = $query->fetch();
@@ -26,7 +29,30 @@ if ($count > 0)
 }
 
 
+if($_POST["checkbox"]=='1' || $_POST["checkbox"]=='on')
+{
+    $hour = time() + 3600 * 24 * 30;
+    setcookie('sign_email', $sign_email, $hour);
+
+}
+
+
+
+////anpayman stugel email@ vor krknvox chlini
+//sha1
+
+//checklogin funkcia grel/// if isseet session id
+
+///mehatmel cookin stugel miayn ayn depqum ete remember me e sexmvac
+///
+///
+/// stugel sessian headerum ete tru  e korcnel log_in panel , display block anel welcome and logout ejer@
+
 ?>
+
+
+
+
 <?php
 require_once 'layouts/left-sidebar.php';
 ?>

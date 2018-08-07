@@ -1,3 +1,9 @@
+<?php
+require_once 'cookies_sessions/session_on.php';
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,8 +23,18 @@
                     <ul>
                         <li class="nav"><a class="nav_href" href="index.php">Home</a></li>
                         <li class="nav"><a class="nav_href" href="about_us.php">About</a></li>
-                        <li class="nav"><a class="nav_href" href="sign_up.php">Sign up</a></li>
-                        <li class="nav"><a class="nav_href" href="log_in.php">Log in</a></li>
+
+                        <?php
+                        if (check_session()): ?>
+
+                            <li class="nav"><a class="nav_href" href="log_out.php">Log out</a></li>
+                            <li class="nav"><a class="nav_href" href="welcome.php">News</a></li>
+                        <?php else: ?>
+                            <li class="nav"><a class="nav_href" href="sign_up.php">Sign up</a></li>
+                            <li class="nav" ><a class="nav_href" href="log_in.php">Log in</a></li>
+
+                        <?php endif; ?>
+
                         <li class="nav"><a class="nav_href" href="contact.php">Contact</a></li>
 
                     </ul>
