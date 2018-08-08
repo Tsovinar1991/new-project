@@ -4,6 +4,7 @@ require_once 'components/db_functions.php';
 
 require_once 'layouts/header.php';
 require_once 'cookies_sessions/session_on.php';
+require_once 'valid/admin_validate.php';
 
 ?>
 
@@ -17,26 +18,35 @@ require_once 'valid/admin_validate.php';
 $sign_email = $_POST['sign_email'];
 $sign_password = md5(($_POST['sign_password']));
 $remember_me = $_POST['checkbox'];
-$query = $conn->query("Select * from registr_s where email = '$sign_email' and password ='$sign_password' ");
-$count = $query->rowcount();
-$row = $query->fetch();
+$warn ='';
 
-if ($count > 0)
-{
-    session_start();
-    $_SESSION['id'] = $row['id'];
-    header('location:welcome.php');
-}
+if (isset($_POST["singlebutton"])) {
+    if (!required($sign_email) || !required($sign_password)) {
+        $warn = "Please fill all required fields.";
+        $errors++;
+
+    } else {
+
+        $query = $conn->query("Select * from registr_s where email = '$sign_email' and password ='$sign_password' ");
+        $count = $query->rowcount();
+        $row = $query->fetch();
+
+        if ($count > 0) {
+            session_start();
+            $_SESSION['id'] = $row['id'];
+            $_SESSION['name'] = $row['f_name'];
+
+            header('location:welcome.php');
+        }
 
 
-if($_POST["checkbox"]=='1' || $_POST["checkbox"]=='on')
-{
-    $hour = time() + 3600 * 24 * 30;
-    setcookie('sign_email', $sign_email, $hour);
+        if ($_POST["checkbox"] == '1' || $_POST["checkbox"] == 'on') {
+            $hour = time() + 3600 * 24 * 30;
+            setcookie('sign_email', $sign_email, $hour);
 
-}
+        }
 
-
+    }
 
 ////anpayman stugel email@ vor krknvox chlini
 //sha1
@@ -47,7 +57,7 @@ if($_POST["checkbox"]=='1' || $_POST["checkbox"]=='on')
 ///
 ///
 /// stugel sessian headerum ete tru  e korcnel log_in panel , display block anel welcome and logout ejer@
-
+}
 ?>
 
 
@@ -75,10 +85,10 @@ require_once 'layouts/left-sidebar.php';
 
             <!-- Password input-->
             <div class="form-group">
-                <label class="col-md-4 control-label" for="passwordinput">Last Name:</label>
+                <label class="col-md-4 control-label" for="passwordinput">Password:</label>
                 <div class="col-md-6">
                     <input name="sign_password" class="form-control input-md" id="passwordinput" type="password"
-                           placeholder="Last Name">
+                           placeholder="Password">
 
                 </div>
             </div>
@@ -98,9 +108,12 @@ require_once 'layouts/left-sidebar.php';
                     <button name="singlebutton" class="btn btn-primary login_bottom_margin" id="singlebutton">Log in</button>
                 </div>
             </div>
-
-
         </form>
+        <div class="warning">
+            <?php echo $warn . "<br>" ?>
+
+
+        </div>
     </div>
 </div>
 

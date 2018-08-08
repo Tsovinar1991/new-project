@@ -150,4 +150,22 @@ li{
 .warning{
     color:red;
 }
+.news_date{
+    font-style:italic;
+}
 
+.logout_bt_margin{
+    margin-top:15px;
+    margin-bottom: 15px;
+}
+
+
+.red_button:hover{
+    background-color:red ;
+    color:#F5EDD5;
+}
+
+.green_button:hover{
+    background-color:#13B5BF;
+    color:#F5EDD5;
+}

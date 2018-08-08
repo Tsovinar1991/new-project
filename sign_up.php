@@ -14,6 +14,7 @@ $warning = "";
 $message = "";
 $not_equal ="";
 $email_error = "";
+$repeat_error = "";
 $errors = 0;
 
 
@@ -40,6 +41,14 @@ if (isset($_POST["submit"])) {
             $email_error = "You must enter valid email address.";
             $errors++;
         }
+    }
+
+    $query = $conn->query("Select * from registr_s where email = '$email' ");
+    $count = $query->rowcount();
+    $row = $query->fetch();
+    if($count>0){
+        $repeat_error = "Your email address is already in use.";
+        $errors++;
     }
 
     if ($errors === 0) {
@@ -143,6 +152,8 @@ require_once 'layouts/left-sidebar.php';
             <?= $message . "<br>" ?>
             <?= $not_equal . "<br>" ?>
             <?= $email_error . "<br>" ?>
+            <?=$repeat_error?>
+
         </div>
     </div>
 </div>
@@ -152,6 +163,3 @@ require_once 'layouts/left-sidebar.php';
 <?php require_once 'layouts/footer.php'; ?>
 
 
-
-
-/// sha1 modifing

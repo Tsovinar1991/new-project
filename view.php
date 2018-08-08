@@ -1,6 +1,8 @@
 <?php
 require_once 'components/db_functions.php';
 require_once 'layouts/header.php';
+require_once 'cookies_sessions/session_on.php';
+
 ?>
 
 
@@ -30,7 +32,7 @@ require_once 'layouts/header.php';
                         <div class="image_container"><img src="uploads/<?php echo $data['image_path'];?>"</div>
                         <div class = "description"><?php echo $data['description'];?></div>
                         <div><?php echo $data['content'];?></div>
-                        <div>Created : <?php echo $data['date_of_creating'];?></div>
+                        <div class="news_date">Created  : <?php echo $data['date_of_creating'];?>  </div>
                     </div>
 
             <?php } ?>

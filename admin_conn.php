@@ -1,6 +1,7 @@
 <?php
 
 //print_r($_POST);
+require_once "components/db_functions.php";
 
 require_once 'valid/admin_validate.php';
 
@@ -27,7 +28,6 @@ if (isset($_POST["save"])) {
 
 
         try {
-            require_once "components/db_functions.php";
             echo "Connected successfully" . "<br>";
 
 

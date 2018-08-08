@@ -13,17 +13,24 @@ require_once 'layouts/left-sidebar.php';
 
     <div class="container">
         <form method="get">
-            <h2 class="m_top">Are you sure , you want to log out?</h2>
+            <h2 class="m_top"><?= $_SESSION['name'] ?> are you sure , you want to log out?</h2>
 
-            <button  type ="submit" name="yes">Yes</button>
-            <button type ="submit" name="no">No</button>
+
+            <div  class="col-md-4"> <button  type ="submit" name="yes" class="form-control logout_bt_margin input-md red_button">Yes</button></div>
+            <div class="col-md-4"><button type ="submit" name="no" class="form-control logout_bt_margin input-md green_button">No</button></div>
 
             <?php
-            if (isset($_GET['yes']))
-            session_destroy();
+            if (isset($_GET['yes'])) {
+                session_destroy();
+                header("location:index.php");
+            }
             else{
                 echo "<br>";
+
+
+
                 echo "Thank you for Cooperation!";
+
             }
 
             ?>
