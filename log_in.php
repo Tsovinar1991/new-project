@@ -16,7 +16,7 @@ require_once 'valid/admin_validate.php';
 require_once 'valid/admin_validate.php';
 
 $sign_email = $_POST['sign_email'];
-$sign_password = md5(($_POST['sign_password']));
+$sign_password = sha1(($_POST['sign_password']));
 $remember_me = $_POST['checkbox'];
 $warn ='';
 
