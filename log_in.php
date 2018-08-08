@@ -105,7 +105,7 @@ require_once 'layouts/left-sidebar.php';
             <!-- Button -->
             <div class="form-group">
                 <div class="col-md-6">
-                    <button name="singlebutton" class="btn btn-primary login_bottom_margin" id="singlebutton">Log in</button>
+                    <button name="singlebutton" class="btn btn-primary " id="singlebutton">Log in</button>
                 </div>
             </div>
         </form>
