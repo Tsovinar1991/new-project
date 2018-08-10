@@ -5,6 +5,7 @@ $id = $_GET['id'];
 if(!$id){
     header('location:'.$_SERVER['HTTP_REFERER']);
 }
+
 require_once 'components/db_functions.php';
 
 require_once 'layouts/header.php';

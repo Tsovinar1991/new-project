@@ -175,3 +175,24 @@ li{
     background-color:#13B5BF;
     color:#F5EDD5;
 }
+
+
+#description {
+    max-height: 150px;
+    height: 150px;
+
+}
+
+#content {
+    height: 300px;
+    max-height: 300px;
+    overflow: scroll;
+}
+
+.admin_info{
+    text-decoration:none !important;
+   color: #7c5b55;
+}
+.sel_margin_bottom{
+    margin-bottom: 10px;
+}
