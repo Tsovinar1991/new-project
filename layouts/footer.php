@@ -2,7 +2,7 @@
 <div class="container footer">
     <div class="row">
         <footer>
-           <h6 style="margin-left:20px;">All rights licence@ 2018</h6>
+           <h6 style="margin-left:20px;">News Corner @ 2018</h6>
         </footer>
     </div>
 </div>

@@ -24,21 +24,17 @@ $errors= '';
 if (isset($_POST["singlebutton"])) {
     if (!required($sign_email) || !required($sign_password)) {
         $warn = "Please fill all required fields.";
-        $errors++;
+
 
 
 
     }
 
-    if (!empty($sign_email)) {
-        if (!valid_email($email)) {
-            $email_error = "You must enter valid email address.";
-            $errors++;
-        }
-    }
 
 
-    if($errors = 0) {
+
+
+    else {
 
         $query = $conn->query("Select * from registr_s where email = '$sign_email' and password ='$sign_password' ");
         $count = $query->rowcount();
@@ -124,7 +120,7 @@ require_once 'layouts/left-sidebar.php';
         </form>
         <div class="warning">
             <?php echo $warn . "<br>" ?>
-            <?php echo $email_error . "<br>" ?>
+            
 
 
         </div>
