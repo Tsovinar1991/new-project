@@ -19,13 +19,26 @@ $sign_email = $_POST['sign_email'];
 $sign_password = sha1(($_POST['sign_password']));
 $remember_me = $_POST['checkbox'];
 $warn ='';
+$errors= '';
 
 if (isset($_POST["singlebutton"])) {
     if (!required($sign_email) || !required($sign_password)) {
         $warn = "Please fill all required fields.";
+        $errors++;
 
 
-    } else {
+
+    }
+
+    if (!empty($sign_email)) {
+        if (!valid_email($email)) {
+            $email_error = "You must enter valid email address.";
+            $errors++;
+        }
+    }
+
+
+    if($errors = 0) {
 
         $query = $conn->query("Select * from registr_s where email = '$sign_email' and password ='$sign_password' ");
         $count = $query->rowcount();
@@ -111,6 +124,7 @@ require_once 'layouts/left-sidebar.php';
         </form>
         <div class="warning">
             <?php echo $warn . "<br>" ?>
+            <?php echo $email_error . "<br>" ?>
 
 
         </div>
