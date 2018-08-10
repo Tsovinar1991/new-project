@@ -23,7 +23,7 @@ $warn ='';
 if (isset($_POST["singlebutton"])) {
     if (!required($sign_email) || !required($sign_password)) {
         $warn = "Please fill all required fields.";
-        $errors++;
+
 
     } else {
 
@@ -77,7 +77,7 @@ require_once 'layouts/left-sidebar.php';
             <div class="form-group">
                 <label class="col-md-4 control-label" for="E-mail">E-mail:</label>
                 <div class="col-md-6">
-                    <input name="sign_email" class="form-control input-md" id="E-mail" type="text" placeholder="E-mail">
+                    <input   value ="<?= trim($sign_email)?>" name="sign_email" class="form-control input-md" id="E-mail" type="text" placeholder="E-mail">
 
                 </div>
             </div>
@@ -87,7 +87,7 @@ require_once 'layouts/left-sidebar.php';
             <div class="form-group">
                 <label class="col-md-4 control-label" for="passwordinput">Password:</label>
                 <div class="col-md-6">
-                    <input name="sign_password" class="form-control input-md" id="passwordinput" type="password"
+                    <input   value = "<?= trim($_POST['sign_password'])?>" name="sign_password" class="form-control input-md" id="passwordinput" type="password"
                            placeholder="Password">
 
                 </div>
@@ -97,7 +97,7 @@ require_once 'layouts/left-sidebar.php';
             <div class="form-group">
                 <label class="col-md-4 control-label" for="checkbox">Remember me</label>
                 <div class="col-md-6">
-                    <input name="checkbox" class=" input-md" id="checkbox" type="checkbox">
+                    <input  name="checkbox" class=" input-md" id="checkbox" type="checkbox">
                 </div>
             </div>
 

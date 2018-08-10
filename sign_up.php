@@ -96,7 +96,7 @@ require_once 'layouts/left-sidebar.php';
             <div class="form-group">
                 <label class="col-md-4 control-label" for="textinput">Name:</label>
                 <div class="col-md-6">
-                    <input name="name" class="form-control input-md" id="textinput" type="text" placeholder="Name">
+                    <input value="<?= trim($f_name)?>" name="name" class="form-control input-md" id="textinput" type="text" placeholder="Name">
 
                 </div>
             </div>
@@ -105,7 +105,7 @@ require_once 'layouts/left-sidebar.php';
             <div class="form-group">
                 <label class="col-md-4 control-label" for="passwordinput">Last Name:</label>
                 <div class="col-md-6">
-                    <input name="l_name" class="form-control input-md" id="passwordinput" type="text"
+                    <input  value="<?= trim($l_name)?>" name="l_name" class="form-control input-md" id="passwordinput" type="text"
                            placeholder="Last Name">
 
                 </div>
@@ -115,7 +115,7 @@ require_once 'layouts/left-sidebar.php';
             <div class="form-group">
                 <label class="col-md-4 control-label" for="E-mail">E-mail:</label>
                 <div class="col-md-6">
-                    <input name="e_mail" class="form-control input-md" id="E-mail" type="text" placeholder="E-mail">
+                    <input value="<?= trim($email)?>" name="e_mail" class="form-control input-md" id="E-mail" type="text" placeholder="E-mail">
 
                 </div>
             </div>
@@ -124,7 +124,7 @@ require_once 'layouts/left-sidebar.php';
             <div class="form-group">
                 <label class="col-md-4 control-label" for="passwordinput">Password:</label>
                 <div class="col-md-6">
-                    <input name="password" class="form-control input-md" id="passwordinput" type="password"
+                    <input  value="<?= trim($password)?>" name="password" class="form-control input-md" id="passwordinput" type="password"
                            placeholder="Password">
 
                 </div>
@@ -134,7 +134,7 @@ require_once 'layouts/left-sidebar.php';
             <div class="form-group">
                 <label class="col-md-4 control-label" for="confpassword">Confirm Password</label>
                 <div class="col-md-6">
-                    <input name="conf_password" class="form-control input-md" id="confpassword" type="password"
+                    <input value="<?= trim($conf_password)?>" name="conf_password" class="form-control input-md" id="confpassword" type="password"
                            placeholder="Confirm Password">
                 </div>
             </div>
