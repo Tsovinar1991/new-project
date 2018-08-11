@@ -1,5 +1,8 @@
 <?php
-
+require_once 'cookies_sessions/session_on.php';
+if(check_session()){
+    header("Location:index.php");
+}
 //print_r($_POST);
 
 require_once "components/db_functions.php";
@@ -16,6 +19,12 @@ $not_equal ="";
 $email_error = "";
 $repeat_error = "";
 $errors = 0;
+
+///avelacnel erkrneri table, registrationi, mej, login@ krkin veranayel ereorner@///\
+/// ///idn stananq sessiayi mej qcenq u avtomad  redirect exni myproifile ej mtni
+/// anun aganun, mail u erkrii anun@ grvi nkar ikonkayov
+
+///countriner@ avelacnel,  forin keyov miacnel
 
 
 if (isset($_POST["submit"])) {

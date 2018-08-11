@@ -10,7 +10,9 @@ require_once 'valid/admin_validate.php';
 
 
 <?php
-
+if(check_session()){
+    header("Location:index.php");
+}
 
 require_once 'valid/admin_validate.php';
 
@@ -47,15 +49,8 @@ if (isset($_POST["singlebutton"])) {
 
     }
 
-////anpayman stugel email@ vor krknvox chlini
-//sha1
 
-//checklogin funkcia grel/// if isseet session id
 
-///mehatmel cookin stugel miayn ayn depqum ete remember me e sexmvac
-///
-///
-/// stugel sessian headerum ete tru  e korcnel log_in panel , display block anel welcome and logout ejer@
 }
 ?>
 
