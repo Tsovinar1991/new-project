@@ -52,3 +52,4 @@ $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
 <?php require_once 'layouts/footer.php'; ?>
 
 
+//////orderingov categories/// jquery ui drag and drop ogtagorcel

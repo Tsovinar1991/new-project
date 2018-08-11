@@ -14,7 +14,7 @@ require_once 'layouts/left-sidebar.php';
 
     <div class="col-md-12">
     <form action="admin_conn.php" method="post" enctype="multipart/form-data">
-        <h3><a  class= "admin_info" href = welcome.php>For going back, just click here.</a></h3>
+       <!-- <h3><a  class= "admin_info" href = welcome.php>For going back, just click here.</a></h3>-->
         <header><h2>Create News</h2></header>
         <div class="row">
             <div class="col-md-12">

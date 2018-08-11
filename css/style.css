@@ -137,6 +137,7 @@ li{
  #logo a:hover{
     text-decoration:none !important;
     color:#13B5BF;
+
 }
 
 
@@ -146,6 +147,7 @@ li{
     -webkit-animation-duration: 10s; /* Safari 4.0 - 8.0 */
     animation-name: example;
     animation-duration: 10s;
+
 }
 
 /* Safari 4.0 - 8.0 */
@@ -225,6 +227,9 @@ li{
 .sel_margin_bottom{
     margin-bottom: 10px;
 }
+
+
+
 
 
 

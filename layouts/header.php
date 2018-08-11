@@ -18,7 +18,7 @@ require_once 'cookies_sessions/session_on.php';
     <div class="container header">
         <div class="navigation">
             <nav class="row ">
-                <div class="col-md-4 " id="logo"><a href="index.php"><h2>Ne<i>W</i>s Corner</h2></a></div>
+                <div class="col-md-4 " id="logo"><a href="index.php"><h2 >Ne<i>W</i>s Corner</h2></a></div>
                 <div class="col-md-8">
                     <ul>
                         <li class="nav"><a class="nav_href" href="index.php">Home</a></li>

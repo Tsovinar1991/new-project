@@ -1,4 +1,3 @@
-
 <?php
 require_once 'components/db_functions.php';
 
@@ -18,23 +17,14 @@ require_once 'valid/admin_validate.php';
 $sign_email = $_POST['sign_email'];
 $sign_password = sha1(($_POST['sign_password']));
 $remember_me = $_POST['checkbox'];
-$warn ='';
-$errors= '';
+$warn = '';
+$errors = '';
 
 if (isset($_POST["singlebutton"])) {
     if (!required($sign_email) || !required($sign_password)) {
         $warn = "Please fill all required fields.";
 
-
-
-
-    }
-
-
-
-
-
-    else {
+    } else {
 
         $query = $conn->query("Select * from registr_s where email = '$sign_email' and password ='$sign_password' ");
         $count = $query->rowcount();
@@ -86,7 +76,8 @@ require_once 'layouts/left-sidebar.php';
             <div class="form-group">
                 <label class="col-md-4 control-label" for="E-mail">E-mail:</label>
                 <div class="col-md-6">
-                    <input   value ="<?= trim($sign_email)?>" name="sign_email" class="form-control input-md" id="E-mail" type="text" placeholder="E-mail">
+                    <input value="<?= trim($sign_email) ?>" name="sign_email" class="form-control input-md" id="E-mail"
+                           type="text" placeholder="E-mail">
 
                 </div>
             </div>
@@ -96,7 +87,8 @@ require_once 'layouts/left-sidebar.php';
             <div class="form-group">
                 <label class="col-md-4 control-label" for="passwordinput">Password:</label>
                 <div class="col-md-6">
-                    <input   value = "<?= trim($_POST['sign_password'])?>" name="sign_password" class="form-control input-md" id="passwordinput" type="password"
+                    <input value="<?= trim($_POST['sign_password']) ?>" name="sign_password"
+                           class="form-control input-md" id="passwordinput" type="password"
                            placeholder="Password">
 
                 </div>
@@ -106,7 +98,7 @@ require_once 'layouts/left-sidebar.php';
             <div class="form-group">
                 <label class="col-md-4 control-label" for="checkbox">Remember me</label>
                 <div class="col-md-6">
-                    <input  name="checkbox" class=" input-md" id="checkbox" type="checkbox">
+                    <input name="checkbox" class=" input-md" id="checkbox" type="checkbox">
                 </div>
             </div>
 
@@ -120,7 +112,6 @@ require_once 'layouts/left-sidebar.php';
         </form>
         <div class="warning">
             <?php echo $warn . "<br>" ?>
-            
 
 
         </div>
@@ -129,7 +120,7 @@ require_once 'layouts/left-sidebar.php';
 
 </div>
 </div>
-<?php  require_once 'layouts/footer.php'; ?>
+<?php require_once 'layouts/footer.php'; ?>
 
 
 
