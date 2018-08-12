@@ -36,9 +36,9 @@ require_once 'layouts/left-sidebar.php';
             </div>
         </div>
         <div class="col-md-4">
-            <p><label for="image"></label></p>
             <p><input type="file" id="image" class="form-control-file" value="Choose image" name="image"></p>
-            <select class="form-control sel_margin_bottom" name="select" >
+            <p><label for="category">Category</label></p>
+            <select class="form-control sel_margin_bottom" name="select"  id="category">
                 <?php
                 $categories = ["", "Art", "Sport", "Government", "Environmental", "Politics", "Weather", "Universe"];
                 foreach( $categories as $key => $val){
