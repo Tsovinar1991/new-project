@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 10, 2018 at 10:46 AM
+-- Generation Time: Aug 13, 2018 at 12:15 PM
 -- Server version: 10.1.31-MariaDB
 -- PHP Version: 7.0.28
 
@@ -30,7 +30,7 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `categories` (
   `id` int(11) NOT NULL,
-  `title` varchar(255) NOT NULL
+  `title` varchar(255) CHARACTER SET utf8 NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -45,6 +45,86 @@ INSERT INTO `categories` (`id`, `title`) VALUES
 (5, 'Politics'),
 (6, 'Weather'),
 (7, 'Universe');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `countries`
+--
+
+CREATE TABLE `countries` (
+  `id` int(11) NOT NULL,
+  `title` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `countries`
+--
+
+INSERT INTO `countries` (`id`, `title`) VALUES
+(1, 'Afghanistan'),
+(2, 'Albania'),
+(3, 'Algeria'),
+(4, 'American Samoa'),
+(5, 'Andorra'),
+(6, 'Angola'),
+(7, 'Anguilla'),
+(8, 'Antarctica'),
+(9, 'Antigua and Barbuda'),
+(10, 'Argentina'),
+(11, 'Armenia'),
+(12, 'Aruba'),
+(13, 'Australia'),
+(14, 'Austria'),
+(15, 'Azerbaijan'),
+(16, 'Bahamas'),
+(17, 'Bahrain'),
+(18, 'Bangladesh'),
+(19, 'Barbados'),
+(20, 'Belarus'),
+(21, 'Belgium'),
+(22, 'Belize'),
+(23, 'Benin'),
+(24, 'Bermuda'),
+(25, 'Bhutan'),
+(26, 'Bolivia'),
+(27, 'Bosnia and Herzegowina'),
+(28, 'Botswana'),
+(29, 'Bouvet Island'),
+(30, 'Brazil'),
+(31, 'British Indian Ocean Territory'),
+(32, 'Brunei Darussalam'),
+(33, 'Bulgaria'),
+(34, 'Burkina Faso'),
+(35, 'Burundi'),
+(36, 'Cambodia'),
+(37, 'Cameroon'),
+(38, 'Canada'),
+(39, 'Cape Verde'),
+(40, 'Cayman Islands'),
+(41, 'Central African Republic'),
+(42, 'Chad'),
+(43, 'Chile'),
+(44, 'China'),
+(45, 'Christmas Island'),
+(46, 'Cocos (Keeling) Islands'),
+(47, 'Colombia'),
+(48, 'Comoros'),
+(49, 'Congo'),
+(50, 'Congo, the Democratic Republic of the'),
+(51, 'Cook Islands'),
+(52, 'Costa Rica'),
+(53, 'Cote d\'Ivoire'),
+(54, 'Croatia (Hrvatska)'),
+(55, 'Cuba'),
+(56, 'Cyprus'),
+(57, 'Czech Republic'),
+(58, 'Denmark'),
+(59, 'Djibouti'),
+(60, 'Dominica'),
+(61, 'Dominican Republic'),
+(62, 'East Timor'),
+(63, 'Ecuador');
 
 -- --------------------------------------------------------
 
@@ -114,7 +194,8 @@ INSERT INTO `news` (`id`, `title`, `description`, `content`, `image_path`, `cate
 (82, 'dfjwnfjwnfjw', 'wdbjwdbj', 'wdjwndknwd ', '1533707087.jpg ', 5, '2018-08-08'),
 (83, 'enkfnerkfkrfn', 'nnjknkmnkn', 'enfknkrngkr ', '1533713478.jpg ', 1, '2018-08-08'),
 (84, 'bdjwbdjbwdjwd', 'dqnknqdknq', 'ndkqndkqndk ', '1533717102.jpg ', 4, '2018-08-08'),
-(85, 'dkqwndqkdk', 'qdnqnd,qdn,', 'qdnqndqd, ', '1533743475.jpg ', 5, '2018-08-08');
+(85, 'dkqwndqkdk', 'qdnqnd,qdn,', 'qdnqndqd, ', '1533743475.jpg ', 5, '2018-08-08'),
+(86, ' nknk', 'mlmlmlm', 'knknk ', '1533903869.jpg ', 4, '2018-08-10');
 
 -- --------------------------------------------------------
 
@@ -128,6 +209,8 @@ CREATE TABLE `registr_s` (
   `l_name` varchar(50) NOT NULL,
   `email` varchar(320) NOT NULL,
   `password` varchar(40) NOT NULL,
+  `profile_path` varchar(255) NOT NULL,
+  `country_id` int(11) NOT NULL,
   `registr_date` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -135,43 +218,39 @@ CREATE TABLE `registr_s` (
 -- Dumping data for table `registr_s`
 --
 
-INSERT INTO `registr_s` (`id`, `f_name`, `l_name`, `email`, `password`, `registr_date`) VALUES
-(1, 'nwdnwk', 'ndkwndk', 'wd nkwndk', 'dwnkwnd', '2018-08-06'),
-(3, 'bjbjb', 'njnjn', 'bjbjj', 'bjbjbj', '2018-08-06'),
-(4, 'njefje', 'fjwfjw', 'njnewfjk', 'nvkenv', '0000-00-00'),
-(5, 'nkfjkw', 'jwndkw', 'nkfnwkf', 'whfiiw', '0000-00-00'),
-(6, 'nkfjkw', 'jwndkw', 'nkfnwkf', 'whfiiw', '0000-00-00'),
-(7, 'nkfjkw', 'jwndkw', 'nkfnwkf', 'whfiiw', '0000-00-00'),
-(8, 'njknnd', 'qdkqmndknd', 'dnjqndkq', 'dnqkndqn', '2018-08-06'),
-(9, 'dnkndkwndk', 'dmkwmdknwkdn', 'dnkwndknwk', 'dnkwndnwd', '2018-08-06'),
-(10, 'Tsovinar', 'Greigoryan', 'tsovinar.nemesida.grigoryan@gmail.com', '4444', '2018-08-06'),
-(22, 'ndkwndknwk', 'dnkwndknwdk', 'wdnkwndkn', '', '2018-08-06'),
-(30, 'Tsovinar', 'enfknkef', 'wnfkwnfk', '1234', '2018-08-06'),
-(32, 'uuwhewue', 'njwnnrjnwj', 'wr njnwrjw', '258', '2018-08-06'),
-(34, 'wdjdkwjkdjkwdj', 'bjjn', 'hdjfjk@mail.ru', '1234', '2018-08-06'),
-(38, 'wwnknwdkwnd', 'wdnkwndkwdn', 'wndkndkdwnknkw@mail.ru', '456', '2018-08-06'),
-(39, 'hjhjhj', 'sjhjshsj', 'nkenk@mail.ru', '789', '2018-08-06'),
-(40, 'jnjnsanj', 'hhjknjkkjk', 'bhdsh@mail.ru', '456', '2018-08-06'),
-(41, 'md5(djbwdjndwj)', 'jkwnkdwmndknwdk', 'dnknwdkd@mail.ru', '789', '2018-08-06'),
-(42, 'eb930ce835989bd370b8d751f87d8230', 'wndknwdnkwd', 'wnkdnwkdnk@mail.ru', '852', '2018-08-06'),
-(43, 'Tsovinar', 'grig', 'tsovinar.grigoryan@mail.ru', 'Artur1988', '2018-08-06'),
-(45, 'Tsovinar', 'wndkwndk', 'tsov@mail.ru', '456123', '2018-08-07'),
-(46, 'hhh', 'nkmknk', 'hh@mail.ru', '5e36941b3d856737e81516acd45edc50', '2018-08-07'),
-(47, 'fkwnfkwfkknk', 'nfkwnfknwfkkwf', 'kk@mail.ru', '250cf8b51c773f3f8dc8b4be867a9a02', '2018-08-07'),
-(48, 'Tsovinar', 'nakndckad', '77@mail.ru', '28dd2c7955ce926456240b2ff0100bde', '2018-08-07'),
-(49, 'someone', 'nkkkv', '66@mail.ru', '3295c76acbf4caaed33c36b1b5fc2cb1', '2018-08-07'),
-(50, 'Tsovinar', 'wndkwndk', 'tsovinar.nemesida.grigoryan@gmail.com', '81dc9bdb52d04dc20036dbd8313ed055', '2018-08-07'),
-(51, 'njnckamckl', 'nkmlmllml', 'tsovinar.nemesida.grigoryan@gmail.com', '698d51a19d8a121ce581499d7b701668', '2018-08-07'),
-(52, 'njknxknekd', 'nekneknc', '44@mail.ru', '202cb962ac59075b964b07152d234b70', '2018-08-07'),
-(53, 'nksnmlamlc', 'acmalcamlc', '11@mail.ru', '250cf8b51c773f3f8dc8b4be867a9a02', '2018-08-07'),
-(54, 'knaknckankank', 'ankanlkanl', '46454646@mail.ru', '250cf8b51c773f3f8dc8b4be867a9a02', '2018-08-07'),
-(55, 'artur', 'vazigexcyan', 'artur@mail.ru', '68053af2923e00204c3ca7c6a3150cf7', '2018-08-07'),
-(57, 'tsov', ' djbwjdjwdb', 'shineart@mail.ru', '3da90bd3db535c44d21f0d388768d8fa6ac286bc', '2018-08-08'),
-(58, 'niwjijwd', 'nwjnkwndkndwnkdw', '22@mail.ru', 'b6692ea5df920cad691c20319a6fffd7a4a766b8', '2018-08-08'),
-(59, 'Tsovinar', 'nkjnk', '55@mail.ru', '8effee409c625e1a2d8f5033631840e6ce1dcb64', '2018-08-08'),
-(60, 'tsov', 'grig', '789@mail.ru', 'fc1200c7a7aa52109d762a9f005b149abef01479', '2018-08-08'),
-(61, 'Stella', 'Tahm', 'stella@gmail.ru', 'd4d3245199cd6797f6eeb9ca7d32c0446d9697f8', '2018-08-09'),
-(62, 'Test', 'bjbjbjbj', '999@mail.ru', 'afc97ea131fd7e2695a98ef34013608f97f34e1d', '2018-08-10');
+INSERT INTO `registr_s` (`id`, `f_name`, `l_name`, `email`, `password`, `profile_path`, `country_id`, `registr_date`) VALUES
+(1, 'nwdnwk', 'ndkwndk', 'wd nkwndk', 'dwnkwnd', '', 1, '2018-08-06'),
+(3, 'bjbjb', 'njnjn', 'bjbjj', 'bjbjbj', '', 1, '2018-08-06'),
+(4, 'njefje', 'fjwfjw', 'njnewfjk', 'nvkenv', '', 1, '0000-00-00'),
+(5, 'nkfjkw', 'jwndkw', 'nkfnwkf', 'whfiiw', '', 1, '0000-00-00'),
+(6, 'nkfjkw', 'jwndkw', 'nkfnwkf', 'whfiiw', '', 1, '0000-00-00'),
+(7, 'nkfjkw', 'jwndkw', 'nkfnwkf', 'whfiiw', '', 1, '0000-00-00'),
+(8, 'njknnd', 'qdkqmndknd', 'dnjqndkq', 'dnqkndqn', '', 1, '2018-08-06'),
+(9, 'dnkndkwndk', 'dmkwmdknwkdn', 'dnkwndknwk', 'dnkwndnwd', '', 1, '2018-08-06'),
+(10, 'Tsovinar', 'Greigoryan', 'tsovinar.nemesida.grigoryan@gmail.com', '4444', '', 1, '2018-08-06'),
+(22, 'ndkwndknwk', 'dnkwndknwdk', 'wdnkwndkn', '', '', 1, '2018-08-06'),
+(30, 'Tsovinar', 'enfknkef', 'wnfkwnfk', '1234', '', 1, '2018-08-06'),
+(63, 'Tsov', 'Grigoryan', '1000@mail.ru', 'e3cbba8883fe746c6e35783c9404b4bc0c7ee9eb', '1534008533', 5, '2018-08-11'),
+(64, 'Tsovinar', 'ndkwndk', '1001@mail.ru', 'dd01903921ea24941c26a48f2cec24e0bb0e8cc7', '1534008673', 3, '2018-08-11'),
+(65, 'wkdnkwndk', ' dknwdkll', '52@mail.ru', '6216f8a75fd5bb3d5f22b6f9958cdede3fc086c2', '1534008738', 4, '2018-08-11'),
+(66, 'qkdldml', 'wfmlwmflwmfl', 'mwlmfl@mail.ru', '51eac6b471a284d3341d8c0c63d0f1a286262a18', '1534009584', 4, '2018-08-11'),
+(67, 'wjfojwfjowjf', 'dnkqmndlqdl', 'wdnkwndkbj@mail.ru', '40bd001563085fc35165329ea1ff5c5ecbdbbeef', '1534009624', 1, '2018-08-11'),
+(68, 'Tsov', 'Grig', '2018@mail.ru', '66efd9eefecf45dd64eff8e5cb2d13e005041925', '1534009807', 3, '2018-08-11'),
+(69, 'sknkdnkd', 'wdmlmdwlwd', 'dknwk@mail.ru', '23b23be9da2519c88f11c084310bcc0bf14417f8', '1534010011', 2, '2018-08-11'),
+(70, 'ekqwnknd', 'qkndkqd', 'wnknfdkn@mail.ru', 'fc7a734dba518f032608dfeb04f4eeb79f025aa7', '1534010128', 1, '2018-08-11'),
+(71, 'nkknknk', 'mkmkmk', '456@mail.ru', '51eac6b471a284d3341d8c0c63d0f1a286262a18', '1534010586', 2, '2018-08-11'),
+(72, 'nkdnwknk', 'wmdkmkf', 'wlkmfl@mail.ru', '98fbc42faedc02492397cb5962ea3a3ffc0a9243', '', 3, '2018-08-11'),
+(73, 'kknknk', 'wkwnkwn', '111@mail.ru', '6216f8a75fd5bb3d5f22b6f9958cdede3fc086c2', '', 2, '2018-08-11'),
+(74, 'dkwdknwdk', 'mdlwmlw', '444@mail.ru', '9a3e61b6bcc8abec08f195526c3132d5a4a98cc0', '1534011915', 4, '2018-08-11'),
+(75, 'kndkndkd wjdjwnbdj', 'nknkfwdnksndk', '852@mail.ru', '2dcc3820e64b3d1a7866b22935c695fd6aa3980a', 'Array', 3, '2018-08-11'),
+(76, 'ksjnfks', 'sfsf', '333@mail.ru', '43814346e21444aaf4f70841bf7ed5ae93f55a9d', '', 5, '2018-08-11'),
+(77, 'nkdnkwdn', 'dlkmnald', 'dmldml@mail.ru', '98fbc42faedc02492397cb5962ea3a3ffc0a9243', '1534012762', 4, '2018-08-11'),
+(78, 'kfnwfk', 'dnkwndk', '784@mail.ru', 'aa5076f800ef52b2ed0f0b8d88bfc68f7fd6a314', '1534013116', 2, '2018-08-11'),
+(79, 'adsfasdfasdf', 'adfsadfsafds', 'tsdasdfovinar.nemesida.grigoryan@gmail.com', '7c4a8d09ca3762af61e59520943dc26494f8941b', '1534015441.jpg', 1, '2018-08-11'),
+(80, 'nfnefnekfkk', 'wndjwndjwd', 'ggg@mail.ru', '07dcd371560bc43c48f56a2f55739ac66741d59d', '1534015973.jpg', 2, '2018-08-11'),
+(81, 'ndkndk', 'slknl', 'tsfkehnfk@mail.ru', '444', '444', 3, '0000-00-00'),
+(87, 'djwdjw', 'qkdnk', '448@mail.ru', '9a3e61b6bcc8abec08f195526c3132d5a4a98cc0', '1534095225.jpg', 17, '2018-08-12'),
+(88, 'Tsov', 'Grig', 'Tsov@mail.ru', 'ba4413c4f9fab80579590bc27e672f37519f9a9d', '1534095510.jpg', 11, '2018-08-12');
 
 --
 -- Indexes for dumped tables
@@ -181,6 +260,12 @@ INSERT INTO `registr_s` (`id`, `f_name`, `l_name`, `email`, `password`, `registr
 -- Indexes for table `categories`
 --
 ALTER TABLE `categories`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `countries`
+--
+ALTER TABLE `countries`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -194,7 +279,8 @@ ALTER TABLE `news`
 -- Indexes for table `registr_s`
 --
 ALTER TABLE `registr_s`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `fk_country_id_registr_s` (`country_id`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -207,16 +293,22 @@ ALTER TABLE `categories`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
+-- AUTO_INCREMENT for table `countries`
+--
+ALTER TABLE `countries`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=64;
+
+--
 -- AUTO_INCREMENT for table `news`
 --
 ALTER TABLE `news`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=86;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=87;
 
 --
 -- AUTO_INCREMENT for table `registr_s`
 --
 ALTER TABLE `registr_s`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=63;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=89;
 
 --
 -- Constraints for dumped tables
@@ -227,6 +319,12 @@ ALTER TABLE `registr_s`
 --
 ALTER TABLE `news`
   ADD CONSTRAINT `fk_category_id_news` FOREIGN KEY (`category_id`) REFERENCES `categories` (`id`);
+
+--
+-- Constraints for table `registr_s`
+--
+ALTER TABLE `registr_s`
+  ADD CONSTRAINT `fk_country_id_registr_s` FOREIGN KEY (`country_id`) REFERENCES `countries` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
