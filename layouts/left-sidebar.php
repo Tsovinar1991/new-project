@@ -6,7 +6,7 @@ $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
 <div class="container">
     <div class="row">
-        <div class="col-md-4 left">
+        <div class="col-md-3 left">
             <h3>Categories</h3>
             <ul class="category_nav" id="sortable">
                 <?php foreach ($data as $value):?>

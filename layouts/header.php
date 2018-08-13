@@ -27,8 +27,8 @@ $data = $stmt->fetch(PDO::FETCH_ASSOC);
 </head>
 <body>
 <div class="container-fluid ">
-    <div class="container header">
-        <div class="navigation">
+    <div class="container header ">
+        <div class="navigation" >
             <nav class="row ">
                 <div class="col-md-4 nav_bottom " id="logo"><a href="index.php"><h2 >Ne<i>W</i>s Corner</h2></a></div>
                 <div class="col-md-8  nav_bottom">

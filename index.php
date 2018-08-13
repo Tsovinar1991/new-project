@@ -19,7 +19,7 @@ $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
 //echo"<pre>";print_r($data);die;
 ?>
 
-<div class="col-md-8 right">
+<div class="col-md-9 right">
     <div class="news_list ">
         <?php if (!empty($data)): ?>
             <?php foreach ($data as $item): ?>

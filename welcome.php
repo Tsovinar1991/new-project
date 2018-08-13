@@ -14,16 +14,18 @@ $f_name =$data['f_name'];
 $l_name = $data['l_name'];
 $email = $data['email'];
 $country = $data['country_name'];
+$img = $data['profile_path']
 ?>
 
 
 <?php
 require_once 'layouts/left-sidebar.php';
 ?>
-    <div class="col-md-8 right">
+    <div class="col-md-9 right">
 
         <div class="container">
             <h2 class="about_info">Welcome <?= $f_name ;?></h2>
+            <img src ="uploads/profiles/<?=$img;?>"  class="profile_img_size">
             <ul>
 
                 <li>Last Name: <?= $l_name ; ?></li>

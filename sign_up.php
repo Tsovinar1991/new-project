@@ -158,12 +158,12 @@ require_once 'layouts/header.php';
 <?php
 require_once 'layouts/left-sidebar.php';
 ?>
-<div class="col-md-8 right">
+<div class="col-md-9 right">
 
     <div class="container">
         <form method="post" action="sign_up.php" enctype="multipart/form-data">
             <!-- Form Name -->
-            <h2 class="m_top">Registration Page</h2>
+            <h2 class="m_top about_info">Registration Page</h2>
 
             <!-- Text input-->
             <div class="form-group">

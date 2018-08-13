@@ -60,12 +60,12 @@ if (isset($_POST["singlebutton"])) {
 <?php
 require_once 'layouts/left-sidebar.php';
 ?>
-<div class="col-md-8 right">
+<div class="col-md-9 right">
 
     <div class="container">
         <form method="post" action="log_in.php">
             <!-- Form Name -->
-            <h2 class="m_top">Log In</h2>
+            <h2 class="m_top about_info">Log In</h2>
 
             <!-- Email input-->
             <div class="form-group">

@@ -11,7 +11,7 @@ require_once 'layouts/header.php';
 <?php
 require_once 'layouts/left-sidebar.php';
 ?>
-    <div class="col-md-8 right">
+    <div class="col-md-9 right">
 
         <div class="col-md-8">
             <h3 class="about_info">Information about us </h3>

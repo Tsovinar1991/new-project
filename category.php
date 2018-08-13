@@ -21,7 +21,7 @@ $sql = "select n1.*, c1.id as c_id, c1.title as category_name from news as n1 in
 $stmt = $conn-> query($sql);
 $data = $stmt->fetchAll();
 ?>
-<div class="col-md-8 right">
+<div class="col-md-9 right">
     <?php if(!empty($data)) : ?>
 
         <div class="news_list ">

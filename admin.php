@@ -10,7 +10,7 @@ require_once 'layouts/header.php';
 require_once 'layouts/left-sidebar.php';
 ?>
 
-<div class="col-md-8 right">
+<div class="col-md-9 right">
 
     <div class="col-md-12">
     <form action="admin_conn.php" method="post" enctype="multipart/form-data">

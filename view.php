@@ -15,7 +15,7 @@ require_once 'cookies_sessions/session_on.php';
 
 
 
-        <div class="col-md-8 right">
+        <div class="col-md-9 right">
             <div class="news ">
             <?php
             if(isset($_GET['id'])){
