@@ -13,7 +13,7 @@ require_once 'layouts/left-sidebar.php';
 
     <div class="container">
         <form method="get">
-            <h2 class="m_top"><?= $_SESSION['name'] ?> are you sure , you want to log out?</h2>
+            <h2 class="m_top about_info"><?= $_SESSION['name'] ?> are you sure , you want to log out?</h2>
 
 
             <div  class="col-md-4"> <button  type ="submit" name="yes" class="form-control logout_bt_margin input-md red_button">Yes</button></div>

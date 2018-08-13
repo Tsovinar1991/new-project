@@ -22,6 +22,7 @@ $data = $stmt->fetch(PDO::FETCH_ASSOC);
     <title>News universe</title>
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/fontawesome.css">
 
 </head>
 <body>
