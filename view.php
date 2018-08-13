@@ -16,7 +16,7 @@ require_once 'cookies_sessions/session_on.php';
 
 
         <div class="col-md-8 right">
-            <div class="news_list ">
+            <div class="news ">
             <?php
             if(isset($_GET['id'])){
                 $id = $_GET['id'];
@@ -29,7 +29,6 @@ require_once 'cookies_sessions/session_on.php';
             ?>
             <?php if(!empty($data)){?>
 
-                    <div class="news_list">
                         <h2 class="title"><?php echo $data['title'];?></h2>
                         <div class="image_container"><img src="uploads/<?php echo $data['image_path'];?>"</div>
                         <div class = "description"><?php echo $data['description'];?></div>

@@ -12,7 +12,7 @@ require_once 'layouts/left-sidebar.php';
 <div class="col-md-8 right">
 
     <div class="col-md-8">
-        <h3>Shine Production </h3>
+        <h3 class="about_info">Shine Production </h3>
         <h4>Telephone Number: 077 23 60 84 </h4>
         <h5>Email: tsovinar.nemesida.grigoryan@gmail.com</h5>
         <h5>Country: Armenia</h5>

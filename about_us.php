@@ -14,7 +14,7 @@ require_once 'layouts/left-sidebar.php';
     <div class="col-md-8 right">
 
         <div class="col-md-8">
-            <h3>Information about us </h3>
+            <h3 class="about_info">Information about us </h3>
 
             <h6>Where can I get some?
                 There are many variations of passages of Lorem Ipsum available, but the majority have suffered
