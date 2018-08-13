@@ -1,5 +1,6 @@
-
+<div class="container footer_image"></div>
 <div class="container footer">
+
     <div class="row">
         <footer>
            <h6 style="margin-left:20px;">News Corner @ 2018</h6>

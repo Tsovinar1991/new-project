@@ -66,12 +66,12 @@ li{
 
 .left{
     background: #FFFFFF;
-    border-right:4px solid  #987A57;
+    border-right:2px solid  #987A57;
 }
 
 .right{
     background: #FFFFFF;
-    border-left:4px solid  #987A57;
+    border-left:2px solid  #987A57;
 
 
 }
@@ -112,7 +112,7 @@ li{
 .header{
     background-color: #624B45;
     border-bottom: 4px solid  #987A57;
-    border-top: 10px solid  #984242;
+    /*border-top: 10px solid  #984242;*/
 
 
 }
@@ -245,6 +245,15 @@ li{
     height:100px;
     background-repeat:no-repeat ;
     background-size: cover;
+}
+
+
+.footer_image{
+    background-image: url("../images/news_bottom.jpg");
+    height:50px;
+    background-repeat:no-repeat ;
+    background-size: cover;
+    border-top: 4px solid  #987A57;
 }
 
 .about_info{
