@@ -26,9 +26,8 @@ $errors = 0;
 
 // login@ krkin veranayel ereorner@///\
 
-/// anun aganun, mail u erkrii anun@ grvi nkar ikonkayov
-//nayel php date funkcianer@
 
+//nayel php date funkcianer@
 
 
 if (isset($_POST["submit"])) {
@@ -36,13 +35,15 @@ if (isset($_POST["submit"])) {
         $warning = "Please fill all required fields.";
         $errors++;
 
+}
 
+
+
+
+    if (!imageRequired($_FILES)) {
+        $warning = "Please fill all required fields.";
+        $errors++;
     }
-
-//    if(!imageRequired($_FILES)){
-//        $warning = "Please fill all required fields.";
-//        $errors++;
-//    }
 
     if (!is_text($f_name) || !is_text($l_name)) {
         $message = "First Name and Last Name must contain only letters.";
@@ -177,9 +178,9 @@ require_once 'layouts/left-sidebar.php';
 
             <!-- l_name input-->
             <div class="form-group">
-                <label class="col-md-4 control-label" for="passwordinput">Last Name:</label>
+                <label class="col-md-4 control-label" for="email">Last Name:</label>
                 <div class="col-md-6">
-                    <input value="<?= trim($l_name) ?>" name="l_name" class="form-control input-md" id="passwordinput"
+                    <input value="<?= trim($l_name) ?>" name="l_name" class="form-control input-md" id="email"
                            type="text"
                            placeholder="Last Name">
 
@@ -256,12 +257,9 @@ require_once 'layouts/left-sidebar.php';
             <?= $not_equal . "<br>" ?>
             <?= $email_error . "<br>" ?>
             <?= $repeat_error . "<br>" ?>
-
-
         </div>
     </div>
 </div>
-
 </div>
 </div>
 <?php require_once 'layouts/footer.php'; ?>
