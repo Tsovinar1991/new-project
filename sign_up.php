@@ -24,15 +24,15 @@ $repeat_error = "";
 
 $errors = 0;
 
-///avelacnel erkrneri table, registrationi, mej, login@ krkin veranayel ereorner@///\
-/// ///idn stananq sessiayi mej qcenq u avtomad  redirect exni myproifile ej mtni
+// login@ krkin veranayel ereorner@///\
+
 /// anun aganun, mail u erkrii anun@ grvi nkar ikonkayov
 //nayel php date funkcianer@
-///countriner@ avelacnel,  forin keyov miacnel
+
 
 
 if (isset($_POST["submit"])) {
-    if (!required($f_name) || !required($l_name) || !required($email) || !required($password) || !required($conf_password)) {
+    if (!required($f_name) || !required($l_name) || !required($email) || !required($password) || !required($conf_password) ||  !required($select_countries)) {
         $warning = "Please fill all required fields.";
         $errors++;
 

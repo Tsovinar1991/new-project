@@ -312,3 +312,12 @@
 //INSERT INTO countries(title) VALUES ( 'Costa Rica');
 //INSERT INTO countries(title) VALUES ( 'Cote d\'Ivoire');
 //INSERT INTO countries(title) VALUES ( 'Croatia (Hrvatska)');
+//INSERT INTO countries(title) VALUES ('Cuba');
+//INSERT INTO countries(title) VALUES (  'Cyprus');
+//INSERT INTO countries(title) VALUES ( 'Czech Republic');
+//INSERT INTO countries(title) VALUES ( 'Denmark');
+//INSERT INTO countries(title) VALUES ( 'Djibouti');
+//INSERT INTO countries(title) VALUES ('Dominica');
+//INSERT INTO countries(title) VALUES ('Dominican Republic');
+//INSERT INTO countries(title) VALUES (  'East Timor');
+//INSERT INTO countries(title) VALUES (  'Ecuador');

@@ -198,13 +198,13 @@ li{
 
 
 .red_button:hover{
-    background-color:red ;
-    color:#F5EDD5;
+    border-color:red ;
+    color:black;
 }
 
 .green_button:hover{
-    background-color:#13B5BF;
-    color:#F5EDD5;
+    border-color:#13B5BF;
+    color:black;
 }
 
 
@@ -228,6 +228,10 @@ li{
     margin-bottom: 10px;
 }
 
+.nav .profile_image{
+    width:30px;
+    border-radius:50%;
+}
 
 
 

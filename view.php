@@ -3,6 +3,8 @@ require_once 'components/db_functions.php';
 require_once 'layouts/header.php';
 require_once 'cookies_sessions/session_on.php';
 
+
+
 ?>
 
 
