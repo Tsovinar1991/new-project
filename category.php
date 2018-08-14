@@ -17,7 +17,7 @@ require_once 'layouts/left-sidebar.php';
 ?>
 <?php
 
-$sql = "select n1.*, c1.id as c_id, c1.title as category_name from news as n1 inner join categories as c1 ON n1.category_id=c1.id where c1.id = $id  order by id desc ";
+$sql = "select n1.*, c1.id as c_id, c1.title as category_name from news as n1 inner join categories as c1 ON n1.category_id=c1.id where c1.id = '$id' order by id desc ";
 $stmt = $conn-> query($sql);
 $data = $stmt->fetchAll();
 ?>

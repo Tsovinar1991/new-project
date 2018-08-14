@@ -1,9 +1,9 @@
 <?php
 require_once 'cookies_sessions/session_on.php';
 require_once 'components/db_functions.php';
-$id = $_SESSION['id'];
+$user_id = $_SESSION['id'];
 //$sql = "select * from register_s where id =" . $id;
-$stmt = $conn->query("select * from registr_s where id = '$id'"  );
+$stmt = $conn->query("select * from registr_s where id = '$user_id'"  );
 $data = $stmt->fetch(PDO::FETCH_ASSOC);
 //var_dump($data );
 
