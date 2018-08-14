@@ -10,6 +10,9 @@ require_once 'valid/admin_validate.php';
 
 
 <?php
+
+
+
 if(check_session()){
     header("Location:index.php");
 }
@@ -39,6 +42,10 @@ if (isset($_POST["singlebutton"])) {
 
             header('location:welcome.php');
         }
+        else{
+            $warn = "Please insert correct data.";
+        }
+
 
 
         if ($_POST["checkbox"] == '1' || $_POST["checkbox"] == 'on') {

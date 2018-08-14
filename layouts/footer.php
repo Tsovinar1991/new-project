@@ -12,7 +12,6 @@
 
 <script src="js/jquery.js"></script>
 <script src="js/jquery_ui.js"></script>
-<!--<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>-->
 <script src="js/script.js"></script>
 <script src="js/admin_validation.js"></script>
 <script src="js/sortable.js"></script>

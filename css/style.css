@@ -3,10 +3,10 @@ body{
     outline:none;
     padding:0;
     margin:0;
-    /*-webkit-user-select: none;  !* Chrome all / Safari all *!*/
-    /*-moz-user-select: none;     !* Firefox all *!*/
-    /*-ms-user-select: none;      !* IE 10+ *!*/
-    /*user-select: none;*/
+    -webkit-user-select: none;  /* Chrome all / Safari all */
+    -moz-user-select: none;     /* Firefox all */
+    -ms-user-select: none;      /* IE 10+ */
+    user-select: none;
 
 }
 
@@ -114,7 +114,7 @@ li{
 .header{
     background-color: #624B45;
     border-bottom: 4px solid  #987A57;
-    /*border-top: 10px solid  #984242;*/
+   
 
 
 
@@ -130,7 +130,7 @@ li{
     background-color:  #624B45 !important;
     height:150px;
     border-top: 4px solid  #987A57;
-    border-bottom: 4px solid  #984242;
+
     color:#F5EDD5;
 }
 

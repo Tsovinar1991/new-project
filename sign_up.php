@@ -24,10 +24,22 @@ $repeat_error = "";
 
 $errors = 0;
 
-// login@ krkin veranayel ereorner@///\
+
 
 
 //nayel php date funkcianer@
+////how encreaze size of file_ upload and change
+/// 512 megabayt dnel ormayum
+/// max_upload-size     512 megabayt
+/// server ansqer 30 minutes, like max post size   30 varkyan@ darcnel 300 varkyan
+/// default on mode rewrite
+/// precision 7 -14
+/// phpinfo() usumnasirel, error noticners miacnel
+///
+///E_notice@
+/// max upload@ 1024 megabayt dnel
+///
+/// avelacnel nor ej, vori mej cuic ta  categorianeri cank@, ev qanak@ amen meki koxq@ , menyui mej avelacnel categories li
 
 
 if (isset($_POST["submit"])) {
@@ -222,7 +234,7 @@ require_once 'layouts/left-sidebar.php';
             <div class="form-group">
                 <label class="col-md-4 control-label" for="profile">Profile image</label>
                 <div class="col-md-6">
-                    <p><input type="file" id="profile" class="form-control-file" value="Choose image" name="profile">
+                    <p id = "download_image"><input type="file" id="profile" class="form-control-file" value="Choose image" name="profile">
                     </p>
 
                 </div>

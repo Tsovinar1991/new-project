@@ -23,7 +23,6 @@ $data = $stmt->fetchAll();
 ?>
 <div class="col-md-9 right">
     <?php if(!empty($data)) : ?>
-
         <div class="news_list ">
             <?php foreach($data as $item):?>
                 <h4 class="title"><a href="view.php?id=<?php echo $item['id']; ?>"><?php echo $item['title']; ?></a>
@@ -40,7 +39,7 @@ $data = $stmt->fetchAll();
             <?php endforeach;  ?>
         </div>
 
-
+<!--   categoriayi mej left join@ petq che, 2 hat sql grel aystex, vor stanam  category name   -->
     <?php endif;?>
 </div>
 
