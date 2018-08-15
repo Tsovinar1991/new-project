@@ -22,31 +22,34 @@ $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
 <div class="col-md-9 right">
     <div class="news_list ">
         <?php if (!empty($data)): ?>
+        <div class="row m-0">
             <?php foreach ($data as $item): ?>
-                <h4 class="title"><a href="view.php?id=<?php echo $item['id']; ?>"><?php echo $item['title']; ?></a>
-                </h4>
-                <div class="image_container">
-                    <img src="uploads/<?php echo $item['image_path']; ?>">
+                <div class="col-sm-6">
+                    <h4 class="title"><a href="view.php?id=<?php echo $item['id']; ?>"><?php echo $item['title']; ?></a>
+                    </h4>
+                    <div class="image_container">
+                        <img src="uploads/<?php echo $item['image_path']; ?>">
+                    </div>
+                    <div class="description"><?php echo $item['description']; ?></div>
+
+                    <?php
+                    //$stmt = $conn->query("SELECT * FROM categories where id =".$item['category_id']);
+                    //   $category = $stmt->fetch(PDO::FETCH_ASSOC);
+                    ?>
+                    <div class="category">Category: <?php
+                        echo $item['category_name'];
+                        //echo $category['title'];
+
+                        ?>
+                    </div>
                 </div>
-                <div class="description"><?php echo $item['description']; ?></div>
-
-                <?php
-                //$stmt = $conn->query("SELECT * FROM categories where id =".$item['category_id']);
-                //   $category = $stmt->fetch(PDO::FETCH_ASSOC);
-                ?>
-                <div class="category">Category: <?php
-                    echo $item['category_name'];
-                    //echo $category['title'];
-
-                    ?> </div>
             <?php endforeach; ?>
+        </div>
         <?php endif; ?>
     </div>
 </div>
 </div>
 </div>
-
-
 
 
 <?php require_once 'layouts/footer.php'; ?>

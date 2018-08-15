@@ -10,7 +10,7 @@ $data = $stmt->fetch(PDO::FETCH_ASSOC);
 
 
 
-///resize php gradaran or crope usumnasirel
+
 ?>
 
 <!DOCTYPE html>

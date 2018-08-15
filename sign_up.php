@@ -1,4 +1,7 @@
 <?php
+
+
+//error_reporting(E_ALL);
 require_once 'cookies_sessions/session_on.php';
 require_once 'components/countries.php';
 if (check_session()) {
@@ -16,13 +19,7 @@ $conf_password = $_POST['conf_password'];
 $profile = $_FILES['profile'];
 $select_countries = $_POST['select_country'];
 $registr_date = date('Y-m-d');
-$warning = "";
-$message = "";
-$not_equal = "";
-$email_error = "";
-$repeat_error = "";
 
-$errors = 0;
 
 
 
@@ -40,38 +37,40 @@ $errors = 0;
 /// max upload@ 1024 megabayt dnel
 ///
 /// avelacnel nor ej, vori mej cuic ta  categorianeri cank@, ev qanak@ amen meki koxq@ , menyui mej avelacnel categories li
-
-
+////funkcia grel vor logini gorcoxutyun@ anel, sign_upic miangamic texapoxel profile
+/// table-i anun@ lini users
+///ckeditor for text designs , integration in forms, slider and gallerys
+//////resize php gradaran or crope usumnasirel
+$errors_arr = [];
 if (isset($_POST["submit"])) {
     if (!required($f_name) || !required($l_name) || !required($email) || !required($password) || !required($conf_password) ||  !required($select_countries)) {
-        $warning = "Please fill all required fields.";
-        $errors++;
+        $errors_arr[] = "Please fill all required fields.";
+
 
 }
 
 
 
-
     if (!imageRequired($_FILES)) {
-        $warning = "Please fill all required fields.";
-        $errors++;
+        $errors_arr[] = "Please fill image fields.";
+
     }
 
     if (!is_text($f_name) || !is_text($l_name)) {
-        $message = "First Name and Last Name must contain only letters.";
-        $errors++;
+        $errors_arr[] = "First Name and Last Name must contain only letters.";
+
     }
 
 
     if (!is_equal($password, $conf_password)) {
-        $not_equal = "Password and Confirm password must be equal.";
-        $errors++;
+        $errors_arr[] = "Password and Confirm password must be equal.";
+
     }
 
     if (!empty($email)) {
         if (!valid_email($email)) {
-            $email_error = "You must enter valid email address.";
-            $errors++;
+            $errors_arr[] = "You must enter valid email address.";
+
         }
     }
 
@@ -79,11 +78,11 @@ if (isset($_POST["submit"])) {
     $count = $query->rowcount();
     $row = $query->fetch();
     if ($count > 0) {
-        $repeat_error = "Your email address is already in use.";
+        $errors_arr[] = "Your email address is already in use.";
         $errors++;
     }
 
-    if ($errors === 0) {
+    if (count($errors_arr) === 0) {
 
 
         try {
@@ -148,6 +147,7 @@ if (isset($_POST["submit"])) {
             // $sql = "Insert into  registr_s(f_name, l_name, email, password, registr_date) values('nkfjkw', 'jwndkw', 'nkfnwkf', 'whfiiw', $registr_date)";
             if ($conn->exec($sql)) {
                 echo "New record created successfully";
+
             } else {
                 echo "Error: ";
             }
@@ -264,11 +264,9 @@ require_once 'layouts/left-sidebar.php';
 
         </form>
         <div class="warning">
-            <?= $warning . "<br>" ?>
-            <?= $message . "<br>" ?>
-            <?= $not_equal . "<br>" ?>
-            <?= $email_error . "<br>" ?>
-            <?= $repeat_error . "<br>" ?>
+         <?php foreach ($errors_arr as $value):?>
+             <div><?= $value;?></div>
+         <?php endforeach;?>
         </div>
     </div>
 </div>

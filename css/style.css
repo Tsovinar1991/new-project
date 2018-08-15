@@ -227,7 +227,7 @@ li{
 #content {
     height: 300px;
     max-height: 300px;
-    overflow: scroll;
+    overflow-y: scroll;
 }
 
 .admin_info{
@@ -243,6 +243,7 @@ li{
     height:30px;
     border-radius:50%;
     overflow: hidden;
+    object-fit: cover;
 }
 
 .header_background_image{

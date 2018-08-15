@@ -3,6 +3,10 @@
 <?php
 require_once 'layouts/header.php';
 require_once 'cookies_sessions/session_on.php';
+if (!check_session()) {
+    header("Location:index.php");
+}
+
 //var_dump($_SESSION['name']);
 $id = $_SESSION['id'];
 

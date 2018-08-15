@@ -4,6 +4,11 @@
 require_once "components/db_functions.php";
 
 require_once 'valid/admin_validate.php';
+require_once 'cookies_sessions/session_on.php';
+if (!check_session()) {
+    header("Location:index.php");
+}
+
 
 
 $title = $_POST['title'];
@@ -12,6 +17,7 @@ $content = $_POST['article'];
 $date = date('Y-m-d');
 $select = $_POST['select'];
 $image = $_FILES['image'];
+$autor_id = $_SESSION['id'];
 
 
 
@@ -92,7 +98,7 @@ if (isset($_POST["save"])) {
                 }
             }
             /////////
-            $sql = "Insert into  news(title, description, content, date_of_creating, image_path,category_id) values('" . $title . "' , '" . $description  . "', '" . $content  . " ', '" . $date . " ', '" . $newname . " ', '"  . $select . " ')";
+            $sql = "Insert into  news(title, description, content, date_of_creating, image_path,category_id, autor_id) values('" . $title . "' , '" . $description  . "', '" . $content  . " ', '" . $date . " ', '" . $newname . " ', '"  . $select . " ',  '"  . $autor_id . " ')";
             //$sql_category = "Insert into  categories(id ) value('"  . $select . " ')";
             if ($conn->exec($sql)) {
                 echo "New record created successfully";
