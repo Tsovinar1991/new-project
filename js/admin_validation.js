@@ -4,7 +4,7 @@ $(document).ready(function () {
         var is_valid = true;
         var fields = $('input');
         for (var i = 0; i < fields.length; i++) {
-            if (($(fields[i]).val().trim().length !== 0)  && ($("#content").val().trim().length !== 0 && $("#description").val().trim().length !== 0)  ){
+            if (($(fields[i]).val().trim().length !== 0)  /*&& $(".content").val().trim().length !== 0 */ && $("#description").val().trim().length !== 0 ){
                 console.log("correct");
             }
             else {

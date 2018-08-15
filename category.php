@@ -23,8 +23,9 @@ $data = $stmt->fetchAll();
 ?>
 <div class="col-md-9 right">
     <?php if(!empty($data)) : ?>
-        <div class="news_list ">
+        <div class="news_list row m-0 ">
             <?php foreach($data as $item):?>
+            <div class="col-sm-6">
                 <h4 class="title"><a href="view.php?id=<?php echo $item['id']; ?>"><?php echo $item['title']; ?></a>
                 </h4>
                 <div class="image_container">
@@ -36,6 +37,7 @@ $data = $stmt->fetchAll();
                     echo $item['category_name'];
 
                     ?> </div>
+            </div>
             <?php endforeach;  ?>
         </div>
 

@@ -1,12 +1,12 @@
 body{
     background:#F5EDD5;
-    outline:none;
+    outline:none !important;
     padding:0;
     margin:0;
-    -webkit-user-select: none;  /* Chrome all / Safari all */
-    -moz-user-select: none;     /* Firefox all */
-    -ms-user-select: none;      /* IE 10+ */
-    user-select: none;
+    /*-webkit-user-select: none;  !* Chrome all / Safari all *!*/
+    /*-moz-user-select: none;     !* Firefox all *!*/
+    /*-ms-user-select: none;      !* IE 10+ *!*/
+    /*user-select: none;*/
 
 }
 
@@ -97,8 +97,15 @@ li{
 }
 
 
+.image_container {
+    width:300px;
+    height:300px;
+    margin-left:0!important;
+}
 .image_container img{
     width:300px;
+    height:300px !important;
+    object-fit:cover !important;
     margin-left:0!important;
 }
 
@@ -271,11 +278,13 @@ li{
 
 .news_list{
     height:600px;
-    overflow: scroll;
+    overflow-y: scroll;
 }
 
 .profile_img_size{
     width:300px;
+    height:300px;
+    object-fit:cover;
 }
 
 

@@ -1,35 +1,35 @@
 <?php
 require_once 'components/db_functions.php';
-
 require_once 'layouts/header.php';
 require_once 'cookies_sessions/session_on.php';
 require_once 'valid/admin_validate.php';
-
 ?>
 
-
-
 <?php
-
-
 
 if(check_session()){
     header("Location:index.php");
 }
 
-require_once 'valid/admin_validate.php';
+
 
 $sign_email = $_POST['sign_email'];
 $sign_password = sha1(($_POST['sign_password']));
 $remember_me = $_POST['checkbox'];
-$warn = '';
-$errors = '';
+$errors = [];
 
 if (isset($_POST["singlebutton"])) {
-    if (!required($sign_email) || !required($sign_password)) {
-        $warn = "Please fill all required fields.";
+    if (!required($sign_email) || !required($_POST['sign_password'])) {
+        $errors[] = "Please fill all required fields.";
 
-    } else {
+    }
+    if (!empty($sign_email)) {
+        if (!valid_email($sign_email)) {
+            $errors[] = "You must enter valid email address.";
+        }
+    }
+
+    if( count($errors )===0) {
 
         $query = $conn->query("Select * from registr_s where email = '$sign_email' and password ='$sign_password' ");
         $count = $query->rowcount();
@@ -112,9 +112,11 @@ require_once 'layouts/left-sidebar.php';
                 </div>
             </div>
         </form>
-        <div class="warning">
-            <?php echo $warn . "<br>" ?>
 
+        <div class="warning">
+            <?php foreach($errors as $error): ?>
+            <?= $error ;?>
+             <?php endforeach;?>
 
         </div>
     </div>

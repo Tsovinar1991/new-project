@@ -1,7 +1,12 @@
 <?php
 require_once 'cookies_sessions/session_on.php';
 require_once 'components/db_functions.php';
-$user_id = $_SESSION['id'];
+if(isset ($_SESSION['id'])) {
+    $user_id = $_SESSION['id'];
+}
+else{
+    $user_id = "";
+}
 //$sql = "select * from register_s where id =" . $id;
 $stmt = $conn->query("select * from registr_s where id = '$user_id'"  );
 $data = $stmt->fetch(PDO::FETCH_ASSOC);
@@ -21,7 +26,7 @@ $data = $stmt->fetch(PDO::FETCH_ASSOC);
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/fontawesome.css">
-
+    <script src="ckeditor/ckeditor.js"></script>
 </head>
 <body>
 <div class="container-fluid ">
@@ -34,6 +39,7 @@ $data = $stmt->fetch(PDO::FETCH_ASSOC);
                         <li class="nav"><a class="nav_href" href="index.php">Home</a></li>
                         <li class="nav"><a class="nav_href" href="about_us.php">About</a></li>
                         <li class="nav"><a class="nav_href" href="contact.php">Contact</a></li>
+                        <li class="nav"><a class="nav_href" href="category_nav.php">Categories</a></li>
 
                         <?php
                         if (check_session()): ?>

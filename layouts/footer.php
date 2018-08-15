@@ -15,6 +15,7 @@
 <script src="js/script.js"></script>
 <script src="js/admin_validation.js"></script>
 <script src="js/sortable.js"></script>
+
 </body>
 </html>
 

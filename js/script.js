@@ -19,9 +19,9 @@ $(document).ready(function () {
 
 
 
-    $( " #download_image #profile" ).click(function() {
-        alert("Your image size`s height and width must be equal each other. ");
-    });
+    // $( " #download_image #profile" ).click(function() {
+    //     alert("Your image size`s height and width must be equal each other. ");
+    // });
 
 
 });

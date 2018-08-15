@@ -2,12 +2,15 @@
 
 //print_r($_POST);
 require_once "components/db_functions.php";
-
 require_once 'valid/admin_validate.php';
 require_once 'cookies_sessions/session_on.php';
 if (!check_session()) {
     header("Location:index.php");
 }
+
+ini_set('upload_max_filesize', '1024M'); //changed file_upload size
+ini_set('max_input_time', 300);
+ini_set('precision', 14);
 
 
 
@@ -117,16 +120,4 @@ header("location: index.php");
 
 
 
-//adslashes function for insert
-//reprodukcia
-//buger gtnel
-//html speshal chars
-//stripslashes()
-
-
-//nkarner@ varchar
-
-
-
 //leftjoin@ veradarcnum e null arjeqner isk joini jamanak voch
-///leftjoin u join@ normal haskanal
