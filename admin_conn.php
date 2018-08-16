@@ -40,7 +40,6 @@ if (isset($_POST["save"])) {
             echo "Connected successfully" . "<br>";
 
 
-            ///////// changing image name in database and in uploads folder
 
             $target_dir = "uploads/";
             //$target_file = $target_dir . basename($_FILES["image"]["name"]);

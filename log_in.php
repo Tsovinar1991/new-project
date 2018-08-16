@@ -116,7 +116,7 @@ require_once 'layouts/left-sidebar.php';
         <div class="warning">
             <?php foreach($errors as $error): ?>
             <?= $error ;?>
-             <?php endforeach;?>
+            <div><?php endforeach;?></div>
 
         </div>
     </div>

@@ -58,6 +58,21 @@ li{
 
 }
 
+
+.cat_nav a{
+    color:black;
+    text-decoration:none;
+    font-size: 20px;
+}
+
+.cat_nav  a:hover{
+    color:#984242 ;
+    text-decoration:none;
+
+
+}
+
+
 .category_nav li a:hover{
     color:red;
     text-decoration:none;
@@ -121,6 +136,7 @@ li{
 .header{
     background-color: #624B45;
     border-bottom: 4px solid  #987A57;
+
    
 
 
@@ -287,6 +303,12 @@ li{
     object-fit:cover;
 }
 
+
+.flex_ceter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
 
 

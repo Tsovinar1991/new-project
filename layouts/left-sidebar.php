@@ -16,5 +16,4 @@ $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
                         ?>"><?= $value['title']?></a> </li>
                 <?php endforeach;?>
             </ul>
-
         </div>
