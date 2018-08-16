@@ -338,6 +338,8 @@
 //INSERT INTO countries(title) VALUES ('Guam');
 //INSERT INTO countries(title) VALUES ( 'Guatemala');
 //INSERT INTO countries(title) VALUES ( 'Guinea');
+//INSERT INTO countries(title) VALUES ( 'Guinea-Bissau');
+//INSERT INTO countries(title) VALUES ( 'Guyana');
 //INSERT INTO countries(title) VALUES ( 'Haiti');
 //INSERT INTO countries(title) VALUES ('Heard and Mc Donald Islands');
 //INSERT INTO countries(title) VALUES ( 'Holy See (Vatican City State)');
@@ -375,6 +377,7 @@
 //INSERT INTO countries(title) VALUES ('Macedonia, The Former Yugoslav Republic of');
 //INSERT INTO countries(title) VALUES ('Madagascar');
 //INSERT INTO countries(title) VALUES ('Malawi');
+//INSERT INTO countries(title) VALUES ('Malayisa');
 //INSERT INTO countries(title) VALUES ('Maldives');
 //INSERT INTO countries(title) VALUES ( 'Mali');
 //INSERT INTO countries(title) VALUES ('Malta');
