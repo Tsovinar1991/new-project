@@ -1,10 +1,10 @@
-// $(document).ready(function () {
+// (document).ready(function () {
 //     var obj = {};
-//     $("#button").click(function (e) {
+//     ("#button").click(function (e) {
 //         var is_valid = true;
 //         var fields = $('input');
 //         for (var i = 0; i < fields.length; i++) {
-//             if (($(fields[i]).val().trim().length !== 0)  /*&& $(".content").val().trim().length !== 0 */ && $("#description").val().trim().length !== 0 ){
+//             if (($(fields[i]).val().trim().length !== 0)  && $(".content").val().trim().length !== 0  && $("#description").val().trim().length !== 0 ){
 //                 console.log("correct");
 //             }
 //             else {
@@ -20,7 +20,7 @@
 //         }
 //     });
 // });
+//
 
 
-
-
+//conflict with ckeditor

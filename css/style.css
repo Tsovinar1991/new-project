@@ -3,6 +3,7 @@ body{
     outline:none !important;
     padding:0;
     margin:0;
+
     /*-webkit-user-select: none;  !* Chrome all / Safari all *!*/
     /*-moz-user-select: none;     !* Firefox all *!*/
     /*-ms-user-select: none;      !* IE 10+ *!*/
@@ -11,6 +12,19 @@ body{
 }
 
 
+
+
+.cat_nav a{
+    color:black;
+    text-decoration:none;
+    font-size: 20px;
+}
+
+.cat_nav  a:hover {
+    color: #984242;
+    text-decoration: none;
+
+}
 
 ul {
     list-style-type: none;
@@ -57,21 +71,6 @@ li{
 
 
 }
-
-
-.cat_nav a{
-    color:black;
-    text-decoration:none;
-    font-size: 20px;
-}
-
-.cat_nav  a:hover{
-    color:#984242 ;
-    text-decoration:none;
-
-
-}
-
 
 .category_nav li a:hover{
     color:red;
@@ -304,11 +303,36 @@ li{
 }
 
 
-.flex_ceter {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+
+.cat {
+
+    position: relative;
+    -webkit-animation-name: example; /* Safari 4.0 - 8.0 */
+    -webkit-animation-duration: 4s; /* Safari 4.0 - 8.0 */
+    animation-name: example_cat;
+    animation-duration: 4s;
 }
+
+/* Safari 4.0 - 8.0 */
+@-webkit-keyframes example_cat {
+    0%   {left:0px; top:0px;}
+    25%  { left:100px; top:0px;}
+    100%   { left:0px; top:0px;}
+
+
+
+}
+
+/* Standard syntax */
+@keyframes example_cat {
+    0%   { left:0px; top:0px;}
+    25%  { left:100px; top:0px;}
+    100%   {left:0px; top:0px;}
+
+
+
+}
+
 
 
 

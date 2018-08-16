@@ -15,9 +15,9 @@ if(!check_session()){
 require_once 'layouts/left-sidebar.php';
 ?>
 
-<div class="col-md-9 right">
+<div class="col-md-9 right  ">
 
-    <div class="col-md-12">
+    <div class="col-md-12 ">
     <form action="admin_conn.php" method="post" enctype="multipart/form-data">
        <!-- <h3><a  class= "admin_info" href = welcome.php>For going back, just click here.</a></h3>-->
         <header><h2 class="about_info">Create News</h2></header>
@@ -35,10 +35,12 @@ require_once 'layouts/left-sidebar.php';
             <div class="col-md-12">
                 <div class="col-md-12">
                     <p><label for="content">Article</label></p>
-                    <p><textarea id="content" class="form-control  content" placeholder="Content ... " name="article"></textarea>
+                    <p><textarea id="content" class="form-control content" placeholder="Content ... " name="article"></textarea>
                     </p>
                     <script>
-                        CKEDITOR.replace('content');
+
+                            CKEDITOR.replace('content');
+
                     </script>
 
                 </div>

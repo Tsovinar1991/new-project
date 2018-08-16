@@ -37,8 +37,8 @@ $data = $stmt->fetch(PDO::FETCH_ASSOC);
                 <div class="col-md-8  nav_bottom">
                     <ul>
                         <li class="nav"><a class="nav_href" href="index.php">Home</a></li>
-                        <li class="nav"><a class="nav_href" href="about_us.php">About</a></li>
-                        <li class="nav"><a class="nav_href" href="contact.php">Contact</a></li>
+                        <li class="nav"><a class="nav_href" href="about_us.php">About Us</a></li>
+                        <li class="nav"><a class="nav_href" href="contact.php">Contact Us</a></li>
                         <li class="nav"><a class="nav_href" href="category_nav.php">Categories</a></li>
 
                         <?php
