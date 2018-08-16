@@ -4,6 +4,9 @@
 //error_reporting(E_ALL);
 require_once 'cookies_sessions/session_on.php';
 require_once 'components/countries.php';
+if(check_session()){
+    header("Location:index.php");
+}
 //print_r($_POST);
 
 
@@ -38,8 +41,6 @@ $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
 //nayel php date funkcianer@
 /// phpinfo() usumnasirel, error noticners miacnel
 ///E_notice@
-/// avelacnel nor ej, vori mej cuic ta  categorianeri cank@, ev qanak@ amen meki koxq@ , menyui mej avelacnel categories li
-////funkcia grel vor logini gorcoxutyun@ anel, sign_upic miangamic texapoxel profile
 /// table-i anun@ lini users
 ///ckeditor for text designs , integration in forms, slider and gallerys
 //////resize php gradaran or crope usumnasirel
@@ -135,6 +136,7 @@ if (isset($_POST["submit"])) {
                     header('location:welcome.php');
                     exit();
                 }
+
 
 
             } else {
