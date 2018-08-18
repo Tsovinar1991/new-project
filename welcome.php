@@ -25,18 +25,22 @@ $img = $data['profile_path']
 <?php
 require_once 'layouts/left-sidebar.php';
 ?>
-<div class="col-md-9 right">
-    <div class="container">
-        <h2 class="about_info">Welcome <?= $f_name; ?></h2>
-        <img src="uploads/profiles/<?= $img; ?>" class="profile_img_size">
-        <ul>
-            <li>Last Name: <?= $l_name; ?></li>
-            <li>Email address: <?= $email; ?> </li>
-            <li>Country: <?= $country; ?> </li>
-        </ul>
-        <a href="admin.php" class="admin">Please just enter here if you want to add news.</a>
+    <div class="col-md-9 right">
+        <div class="container">
+            <div class="col-md-6">
+                <h2 class="about_info">Welcome <?= $f_name; ?></h2>
+                <img src="uploads/profiles/<?= $img; ?>" class="profile_img_size">
+                <ul>
+                    <li>Last Name: <?= $l_name; ?></li>
+                    <li>Email address: <?= $email; ?> </li>
+                    <li>Country: <?= $country; ?> </li>
+                </ul>
+                <?php echo "Today is " . date("Y/m/d") . "<br>"; ?>
+            </div>
+            <div class="cat_nav "><a href="admin.php" class="admin"><?= $f_name ?> please just enter here if you want to
+                    add news.</a></div>
+        </div>
     </div>
-</div>
-</div>
-</div>
+    </div>
+    </div>
 <?php require_once 'layouts/footer.php'; ?>

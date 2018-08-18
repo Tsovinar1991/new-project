@@ -22,7 +22,7 @@ require_once 'layouts/left-sidebar.php';
         <h2 class="about_info"> Count of Categories</h2>
         <div class="row ">
             <?php foreach ($counts as $count): ?>
-                <div class="col-md-3 ">
+                <div class="col-md-3   col-xs-3 col-sm-3 ">
                     <div class="cat_nav">
                         <a href="category.php?id=<?php echo $count['id']; ?>"><?= $count['title'] . " "; ?><?= $count['count']; ?></a>
                     </div>

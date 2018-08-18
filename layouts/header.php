@@ -1,4 +1,5 @@
 <?php
+error_reporting(E_WARNING);
 require_once 'cookies_sessions/session_on.php';
 require_once 'components/db_functions.php';
 if(isset ($_SESSION['id'])) {
@@ -33,8 +34,8 @@ $data = $stmt->fetch(PDO::FETCH_ASSOC);
     <div class="container header " >
         <div class="navigation">
             <nav class="row ">
-                <div class="col-md-4 nav_bottom " id="logo"><a href="index.php"><h2 >Ne<i>W</i>s Corner</h2></a></div>
-                <div class="col-md-8  nav_bottom">
+                <div class="col-md-3  col-xs-3 nav_bottom left_header" id="logo"><a href="index.php"><h2 >Ne<i>W</i>s Corner</h2></a></div>
+                <div class="col-md-9 col-xs-9 nav_bottom right_header">
                     <ul>
                         <li class="nav"><a class="nav_href" href="index.php">Home</a></li>
                         <li class="nav"><a class="nav_href" href="about_us.php">About Us</a></li>

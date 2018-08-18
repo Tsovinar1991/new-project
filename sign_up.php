@@ -2,6 +2,8 @@
 
 
 //error_reporting(E_ALL);
+require_once "components/db_functions.php";
+require_once 'valid/admin_validate.php';
 require_once 'cookies_sessions/session_on.php';
 require_once 'components/countries.php';
 if(check_session()){
@@ -16,8 +18,7 @@ ini_set('max_input_time', 300);
 ini_set('precision', 14);
 
 //$_POST VARIABLES
-require_once "components/db_functions.php";
-require_once 'valid/admin_validate.php';
+
 $f_name = $_POST['name'];
 $l_name = $_POST['l_name'];
 $email = $_POST['e_mail'];
