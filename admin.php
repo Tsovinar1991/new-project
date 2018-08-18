@@ -38,7 +38,7 @@ $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
 if (isset($_POST["save"])) {
     if (!required($_POST['title']) || !required($_POST['description']) || !required($_POST['article']) || !imageRequired($_FILES) || !isset($_POST['select'])) {
         $news_error[] = "All fields are nessesary";
-        echo "error 1";
+
     }
 // Check if image file is a actual image or fake image
     if (($_FILES['image']['size'] > 0)) {
@@ -46,7 +46,7 @@ if (isset($_POST["save"])) {
         if ($check == false) {
             $news_error[] = "File is not an image.";
             $uploadOk = 0;
-            echo "error 2";
+
         }
     }
 
@@ -54,7 +54,7 @@ if (isset($_POST["save"])) {
     if (file_exists($target_file)) {
         $news_error[] = "Sorry, file already exists.";
         $uploadOk = 0;
-        echo "error 3";
+
     }
 
 
@@ -62,7 +62,7 @@ if (isset($_POST["save"])) {
     if ($_FILES["image"]["size"] > 800 * 1024) {
         $news_error[] = "Sorry, your file is too large.";
         $uploadOk = 0;
-        echo "error 4";
+
     }
 // Allow certain file formats
     if (($_FILES['image']['size'] > 0)) {
@@ -70,7 +70,6 @@ if (isset($_POST["save"])) {
             && $imageFileType != "gif") {
             $news_error[] = "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
             $uploadOk = 0;
-            echo "error 5";
         }
     }
 
@@ -166,6 +165,11 @@ require_once 'layouts/left-sidebar.php';
                     </button>
                 </p>
             </div>
+        <div class="warning">
+            <?php foreach($news_error as $new_error):?>
+                <div><?=$new_error ?></div>
+            <?php endforeach; ?>
+        </div>
         </form>
     </div>
 </div>
