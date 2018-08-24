@@ -117,7 +117,7 @@ if (isset($_POST["submit"])) {
 
 //            $sql = "Insert into  registr_s(f_name, l_name, email, password, profile_path, country_id, registr_date) values('$f_name', '$l_name', '$email', sha1('$password'), '$newProfileName', '$select_countries', '$registr_date' )";
             $sql = $con->insert(
-                'candy',
+                'registr_s',
                 array(
                     'f_name' => $f_name,
                     'l_name' => $l_name,
