@@ -1,5 +1,4 @@
 <?php
-error_reporting(E_WARNING);
 require_once 'cookies_sessions/session_on.php';
 require_once 'components/db_functions.php';
 if(isset ($_SESSION['id'])) {
@@ -8,13 +7,24 @@ if(isset ($_SESSION['id'])) {
 else{
     $user_id = "";
 }
-//$sql = "select * from register_s where id =" . $id;
-$stmt = $conn->query("select * from registr_s where id = '$user_id'"  );
-$data = $stmt->fetch(PDO::FETCH_ASSOC);
-//var_dump($data );
+
+//$stmt = $conn->query("select * from registr_s where id = '$user_id'"  );
+//$data = $stmt->fetch(PDO::FETCH_ASSOC);
 
 
 
+
+$con = Database::instance();
+$con->select("registr_s");
+$data = $con->result();
+//everything ok with data/// need to fix display part
+
+
+
+
+
+//var_dump($data);
+//die();
 
 
 ?>
@@ -44,7 +54,7 @@ $data = $stmt->fetch(PDO::FETCH_ASSOC);
 
                         <?php
                         if (check_session()): ?>
-
+<!---->
                             <li class="nav"><a class="nav_href" href="log_out.php">Log out</a></li>
                             <li class="nav"><a class="nav_href" href="welcome.php" title = "Profile">
                                     <?= $data['f_name']?>

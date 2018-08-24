@@ -3,6 +3,7 @@ require_once 'components/db_functions.php';
 require_once 'layouts/header.php';
 require_once 'cookies_sessions/session_on.php';
 require_once 'valid/admin_validate.php';
+$con = Database::instance();
 ?>
 
 <?php
@@ -30,15 +31,16 @@ if (isset($_POST["singlebutton"])) {
     }
 
     if( count($errors )===0) {
+        $query = $con->select("registr_s", array("email"=>$sign_email, "password"=>$sign_password));
+        $count = $con->row();
+//        var_dump($count);
+//        die;
 
-        $query = $conn->query("Select * from registr_s where email = '$sign_email' and password ='$sign_password' ");
-        $count = $query->rowcount();
-        $row = $query->fetch();
 
         if ($count > 0) {
             session_start();
-            $_SESSION['id'] = $row['id'];
-            $_SESSION['name'] = $row['f_name'];
+            $_SESSION['id'] = $count->id;
+            $_SESSION['name'] = $count->f_name;
 
             header('location:welcome.php');
         }

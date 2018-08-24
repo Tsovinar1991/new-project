@@ -1,4 +1,5 @@
 <?php
+require_once 'components/db_functions.php';
 require_once 'layouts/header.php';
 require_once 'cookies_sessions/session_on.php';
 if (!check_session()) {
@@ -9,9 +10,9 @@ if (!check_session()) {
 //var_dump($_SESSION['name']);
 $id = $_SESSION['id'];
 
-$sql = "select r.*, c.id as country_id, c.title as country_name from registr_s as r left join countries as c on r.country_id = c.id where r.id = '$id'";
-$stmt = $conn->query($sql);
-$data = $stmt->fetch(PDO::FETCH_ASSOC);
+//$sql = "select r.*, c.id as country_id, c.title as country_name from registr_s as r left join countries as c on r.country_id = c.id where r.id = '$id'";
+//$stmt = $conn->query($sql);
+//$data = $stmt->fetch(PDO::FETCH_ASSOC);
 
 //var_dump($data);
 $f_name = $data['f_name'];

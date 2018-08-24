@@ -97,11 +97,11 @@ if (isset($_POST["submit"])) {
         }
     }
 
-
+    $con = Database::instance();
     ///checking if there is email repeat
-    $query = $conn->query("Select * from registr_s where email = '$email' ");
-    $count = $query->rowcount();
-    $row = $query->fetch();
+    $con->select("registr_s");
+    $count = $con->count();
+    $row = $con->row();
     if ($count > 0) {
         $errors_arr[] = "Your email address is already in use.";
     }
@@ -112,9 +112,17 @@ if (isset($_POST["submit"])) {
         try {
 //            echo "Connected successfully" . "<br>";
 
-
             $sql = "Insert into  registr_s(f_name, l_name, email, password, profile_path, country_id, registr_date) values('$f_name', '$l_name', '$email', sha1('$password'), '$newProfileName', '$select_countries', '$registr_date' )";
-
+//            $sql = $conn->insert(
+//                'candy',
+//                array(
+//                    'f_name' => $f_name,
+//                    'sweet' => 1,
+//                    'spicey' => 0,
+//                    'brand' => 'Kitkat',
+//                    'amount_per_pack' => 4
+//                )
+//            );
             if (move_uploaded_file($_FILES["profile"]["tmp_name"], $target_file)) {
                 echo "The file " . $newProfileName . " has been uploaded.";
             } else {
