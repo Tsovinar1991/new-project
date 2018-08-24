@@ -15,11 +15,15 @@ else{
 
 
 $con = Database::instance();
-$con->select("registr_s");
+$con->select("registr_s", array("id"=>$user_id));
 $data = $con->result();
 //everything ok with data/// need to fix display part
 
-
+//var_dump($data);
+//foreach($data as $profile){
+//    var_dump($profile->f_name);
+//}
+//die();
 
 
 
@@ -52,17 +56,19 @@ $data = $con->result();
                         <li class="nav"><a class="nav_href" href="contact.php">Contact Us</a></li>
                         <li class="nav"><a class="nav_href" href="category_nav.php">Categories</a></li>
 
-                        <?php
-                        if (check_session()): ?>
-<!---->
-                            <li class="nav"><a class="nav_href" href="log_out.php">Log out</a></li>
+                        <?php if (check_session()): ?>
+                        <?php foreach($data as $profile):?>
+
                             <li class="nav"><a class="nav_href" href="welcome.php" title = "Profile">
-                                    <?= $data['f_name']?>
-                                    <img  class="profile_image"  src="uploads/profiles/<?php echo $data['profile_path']  ?>" alt="">
+                                    <?= $profile->f_name?>
+                                    <img  class="profile_image"  src="uploads/profiles/<?php echo $profile->profile_path  ?>" alt="">
                                 </a></li>
+                                <li class="nav"><a class="nav_href" href="log_out.php">Log out</a></li>
+                            <?php endforeach; ?>
                         <?php else: ?>
                             <li class="nav"><a class="nav_href" href="sign_up.php">Sign up</a></li>
                             <li class="nav" ><a class="nav_href" href="log_in.php">Log in</a></li>
+
 
                         <?php endif; ?>
 

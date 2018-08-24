@@ -15,11 +15,13 @@ $id = $_SESSION['id'];
 //$data = $stmt->fetch(PDO::FETCH_ASSOC);
 
 //var_dump($data);
-$f_name = $data['f_name'];
-$l_name = $data['l_name'];
-$email = $data['email'];
-$country = $data['country_name'];
-$img = $data['profile_path']
+
+$con = Database::instance();
+$con->select("registr_s", array("id"=>$id));
+$data_welcome = $con->result();
+
+
+
 ?>
 
 
@@ -29,14 +31,17 @@ require_once 'layouts/left-sidebar.php';
     <div class="col-md-9 right">
         <div class="container">
             <div class="col-md-6">
-                <h2 class="about_info">Welcome <?= $f_name; ?></h2>
-                <img src="uploads/profiles/<?= $img; ?>" class="profile_img_size">
+
+                <?php foreach($data_welcome as $info):?>
+                <h2 class="about_info">Welcome <?= $info->f_name; ?></h2>
+                <img src="uploads/profiles/<?= $info->profile_path; ?>" class="profile_img_size">
                 <ul>
-                    <li>Last Name: <?= $l_name; ?></li>
-                    <li>Email address: <?= $email; ?> </li>
-                    <li>Country: <?= $country; ?> </li>
+                    <li>Last Name: <?= $info->l_name; ?></li>
+                    <li>Email address: <?= $info->email; ?> </li>
+                    <li>Country:</li>
                 </ul>
                 <?php echo "Today is " . date("Y/m/d") . "<br>"; ?>
+                <?php  endforeach;?>
             </div>
             <div class="cat_nav "><a href="admin.php" class="admin"><?= $f_name ?> please just enter here if you want to
                     add news.</a></div>
