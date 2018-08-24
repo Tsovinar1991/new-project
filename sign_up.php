@@ -6,7 +6,7 @@ require_once "components/db_functions.php";
 require_once 'valid/admin_validate.php';
 require_once 'cookies_sessions/session_on.php';
 require_once 'components/countries.php';
-if(check_session()){
+if (check_session()) {
     header("Location:index.php");
 }
 //print_r($_POST);
@@ -99,12 +99,15 @@ if (isset($_POST["submit"])) {
 
     $con = Database::instance();
     ///checking if there is email repeat
-    $con->select("registr_s");
+    $con->select("registr_s", array("email" => $email));
     $count = $con->count();
     $row = $con->row();
+//    var_dump($row);
+//    die();
     if ($count > 0) {
         $errors_arr[] = "Your email address is already in use.";
     }
+
 
     if (count($errors_arr) === 0 && $uploadOk !== 0) {
 
@@ -112,40 +115,43 @@ if (isset($_POST["submit"])) {
         try {
 //            echo "Connected successfully" . "<br>";
 
-            $sql = "Insert into  registr_s(f_name, l_name, email, password, profile_path, country_id, registr_date) values('$f_name', '$l_name', '$email', sha1('$password'), '$newProfileName', '$select_countries', '$registr_date' )";
-//            $sql = $conn->insert(
-//                'candy',
-//                array(
-//                    'f_name' => $f_name,
-//                    'sweet' => 1,
-//                    'spicey' => 0,
-//                    'brand' => 'Kitkat',
-//                    'amount_per_pack' => 4
-//                )
-//            );
+//            $sql = "Insert into  registr_s(f_name, l_name, email, password, profile_path, country_id, registr_date) values('$f_name', '$l_name', '$email', sha1('$password'), '$newProfileName', '$select_countries', '$registr_date' )";
+            $sql = $con->insert(
+                'candy',
+                array(
+                    'f_name' => $f_name,
+                    'l_name' => $l_name,
+                    'email' => $email,
+                    'password' => sha1($password),
+                    'profile_path' => $newProfileName,
+                    'country_id' => $select_countries,
+                    'registr_date' => $registr_date,
+
+
+                )
+            );
             if (move_uploaded_file($_FILES["profile"]["tmp_name"], $target_file)) {
                 echo "The file " . $newProfileName . " has been uploaded.";
             } else {
                 echo "Sorry, there was an error uploading your file.";
             }
 
-            if ($conn->exec($sql)) {
+            if ($sql) {
                 echo "New record created successfully";
 
-                $query = $conn->query("Select * from registr_s where email = '$email' and password ='" . sha1($password) . "' ");
-                $count = $query->rowcount();
-                $row = $query->fetch();
+                $query = $con->select("registr_s", array("email" => $email, "password" =>sha1($password)));
+                $count = $query->row();
+
 
 
                 if ($count > 0) {
                     session_start();
-                    $_SESSION['id'] = $row['id'];
-                    $_SESSION['name'] = $row['f_name'];
+                    $_SESSION['id'] = $count->id;
+                    $_SESSION['name'] = $count->f_name;
                     ///mtacel
                     header('location:welcome.php');
                     exit();
                 }
-
 
 
             } else {
